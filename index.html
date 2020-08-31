@@ -64,6 +64,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-buile-mongodb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/31/buile-mongodb/" class="article-date">
+  <time datetime="2020-08-31T14:39:24.000Z" itemprop="datePublished">2020-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/31/buile-mongodb/">buile_mongodb </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装mongodb<br>sudo apt(yum) update #更新源<br>sudo apt(yum) upgrade #更新包<br>sudo apt install mongodb #下载mongodb<br>    失败E: 软件包 mongodb-server 没有可安装候选<br>    注释旧源，添加新源<br>      vim /etc/apt/sources.list<br>        deb [by-hash=force] <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/deepin">https://mirrors.tuna.tsinghua.edu.cn/deepin</a> panda main contrib non-free<br>      udo apt(yum) update #更新源<br>      sudo apt(yum) upgrade #更新包<br>mongod #打开mongodb shell(说明成功)</p>
+<p>查看状态<br>systemctl start mongodb #启动<br>systemctl status mongodb #查看<br>systemctl restart mongodb #重启</p>
+<p>卸载<br>    sudo systemctl stop mongodb<br>    sudo apt purge mongodb<br>    sudo apt autoremove</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/31/buile-mongodb/" data-id="ckein4y8i0000vj7n5r91aokk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-build_hexo_blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/31/build_hexo_blog/" class="article-date">
@@ -188,6 +228,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/08/31/buile-mongodb/">buile_mongodb </a>
+          </li>
         
           <li>
             <a href="/2020/08/31/build_hexo_blog/">基于hexo搭建个人博客</a>
