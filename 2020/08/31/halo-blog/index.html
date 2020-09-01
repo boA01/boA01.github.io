@@ -1,264 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
-  
-  <title>基于halo搭建个人博客 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##Ubuntu20.04上基于halo搭建个人博客 ###更新apt 1$sudo apt-get update ###安装java环境 1$sudo apt-get install openjdk-8-jdk ###下载配置文件 1$https:&#x2F;&#x2F;dl.halo.run&#x2F;config&#x2F;application-template.yaml ###下载Halo 1$wget https:&#x2F;&#x2F;hal">
-<meta property="og:type" content="article">
-<meta property="og:title" content="基于halo搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2020/08/31/halo-blog/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##Ubuntu20.04上基于halo搭建个人博客 ###更新apt 1$sudo apt-get update ###安装java环境 1$sudo apt-get install openjdk-8-jdk ###下载配置文件 1$https:&#x2F;&#x2F;dl.halo.run&#x2F;config&#x2F;application-template.yaml ###下载Halo 1$wget https:&#x2F;&#x2F;hal">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-31T14:59:55.000Z">
-<meta property="article:modified_time" content="2020-08-31T15:38:46.105Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 5.1.1"></head>
+{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-halo-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/31/halo-blog/" class="article-date">
-  <time datetime="2020-08-31T14:59:55.000Z" itemprop="datePublished">2020-08-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      基于halo搭建个人博客
-    </h1>
-  
+{% block page_class %}page-post-detail{% endblock %}
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##Ubuntu20.04上基于halo搭建个人博客</p>
-<p>###更新apt</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
-<p>###安装java环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
-<p>###下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$https</span>://dl.halo.run/config/application-template.yaml</span><br></pre></td></tr></table></figure>
-<p>###下载Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wget</span> https://halo.cary.tech/release/halo-1.3.2.jar</span><br></pre></td></tr></table></figure>
-<p>###运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$java</span> -jar halo-1.3.2.jar</span><br></pre></td></tr></table></figure>
-<p>###下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> curl -o /etc/systemd/system/halo.service --create-dirs https://dl.halo.run/config/halo.service</span><br></pre></td></tr></table></figure>
-<p>###YOUR_JAR_PATH更换为自己halo安装包存放的路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> vim /etc/systemd/system/halo.service</span><br></pre></td></tr></table></figure>
-<p>##centos7上基于halo搭建个人博客<br>###1.更新yum</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum update -y</span><br></pre></td></tr></table></figure>
-<p>###2.安装java环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install java-1.8.0-openjdk -y</span><br><span class="line"><span class="variable">$java</span> -version <span class="comment">#检测</span></span><br></pre></td></tr></table></figure>
-<p>###3.下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$curl</span> -o ~/.halo/application.yaml --create-dirs https://dl.halo.run/config/application-template.yaml</span><br><span class="line"><span class="variable">$vim</span> ~/.halo/application.yaml <span class="comment">#配置</span></span><br></pre></td></tr></table></figure>
-<p>###4.下载Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wget</span> https://halo.cary.tech/release/halo-1.3.2.jar</span><br><span class="line"><span class="variable">$java</span> -jar halo-1.3.2.jar <span class="comment">#运行</span></span><br></pre></td></tr></table></figure>
-<p>###5.下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> curl -o /etc/systemd/system/halo.service --create-dirs https://dl.halo.run/config/halo.service</span><br><span class="line"><span class="variable">$sudo</span> vim /etc/systemd/system/halo.service <span class="comment">#YOUR_JAR_PATH更换为自己halo安装包存放的路径</span></span><br></pre></td></tr></table></figure>
-<p>###6.运行<br>####修改service文件之后需要刷新 Systemd</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl daemon-reload</span><br></pre></td></tr></table></figure>
-<p>####设置Halo自启</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl <span class="built_in">enable</span> halo</span><br></pre></td></tr></table></figure>
-<p>####启动Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo start</span><br></pre></td></tr></table></figure>
-<p>####重启Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo restart</span><br></pre></td></tr></table></figure>
-<p>####停止Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo stop</span><br></pre></td></tr></table></figure>
-<p>####查看Halo运行状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo status</span><br></pre></td></tr></table></figure>
-<p>###7.配置域名访问<br>####添加nginx源：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
-<p>####安装nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install -y nginx</span><br></pre></td></tr></table></figure>
-<p>####启动nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl start nginx.service</span><br></pre></td></tr></table></figure>
-<p>####设置开机自启nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl <span class="built_in">enable</span> nginx.service</span><br></pre></td></tr></table></figure>
-<p>####下载下载 Halo 官方的 Nginx 配置模板：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$curl</span> -o /etc/nginx/conf.d/halo.conf --create-dirs https://dl.halo.run/config/nginx.conf</span><br></pre></td></tr></table></figure>
-<p>####配置模板：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$vim</span> /etc/nginx/conf.d/halo.conf<span class="comment">#example.com与www.example.com需要修改为自己的域名</span></span><br></pre></td></tr></table></figure>
-<p>####检查配置是否有误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> nginx -t</span><br></pre></td></tr></table></figure>
-<p>####重载配置信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> nginx -s reload</span><br></pre></td></tr></table></figure>
-<p>####配置 SSL 证书<br>#####安装 certbot 以及 certbot nginx 插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install certbot python2-certbot-nginx -y</span><br></pre></td></tr></table></figure>
-<p>#####执行配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> certbot --nginx</span><br></pre></td></tr></table></figure>
-<p>#####自动续约<br>$sudo certbot renew –dry-run</p>
-<pre><code>####详情请到官方手册 https://halo.run/archives/install-quick-start.html</code></pre>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/halo-blog/" data-id="ckejythof00014t7n8m2fce7w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2020/08/31/build-mongodb/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">build_mongodb </div>
-    </a>
-  
-</nav>
+{% block content %}
 
-  
-</article>
+  <div id="posts" class="posts-expand">
+    {{ post_template.render(page) }}
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    <div class="post-spread">
+      {% if theme.jiathis %}
+        {% include '_partials/share/jiathis.swig' %}
+      {% elseif theme.baidushare %}
+        {% include '_partials/share/baidushare.swig' %}
+      {% elseif theme.add_this_id %}
+        {% include '_partials/share/add-this.swig' %}
+      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
+        {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
     </div>
   </div>
 
+{% endblock %}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/31/halo-blog/">基于halo搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/31/build-mongodb/">build_mongodb </a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/31/hexo-blog/">基于hexo搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/31/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+{% block script_extra %}
+  {% include '_scripts/pages/post-details.swig' %}
+{% endblock %}
