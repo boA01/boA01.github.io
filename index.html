@@ -194,6 +194,192 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/08/vim-do/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="啵A">
+      <meta itemprop="description" content="学习是一生，记录脚下坑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="啵A&博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/08/vim-do/" class="post-title-link" itemprop="url">编辑器之神——vim</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-08 12:27:45 / 修改时间：12:32:01" itemprop="dateCreated datePublished" datetime="2020-09-08T12:27:45+08:00">2020-09-08</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>vi ：<br>    打开文件<br>        vi filename(s) [n] #打开(多个)文件[到第n行]</p>
+<pre><code>编辑模式：
+    ctrl k：确认输入模式
+    ctrl s：锁定，记忆输入
+    ctrl q：解锁，显示输出
+    ctrl o: 暂退编辑模式
+    ctrl g j/k: 相当于↓,↑
+    ctrl j,m：相当于enter
+    ctrl h：相当于backspace
+    ctrl i: 相当于tab
+    ctrl t: 向右缩进
+    ctrl n,p：向下，上 选择粘贴一行
+    ctrl y：对应粘贴上一行
+    ctrl w/u: 向前删
+    ctrl e: 撤销
+    ctrl rn: 后退n步
+
+    ctrl x：
+    ctrl a：
+    alt q：标记
+
+命令模式：
+    a: 从光标所在的下一个字符处开始插入
+    A: 从光标所在行的最后一个字符处开始插入
+    i: 从光标所在处插入
+    I: 在所在行的第一个非空格符处开始插入
+    o: 在光标所在的下一行插入新的一行
+    O: 在光标所在的上一行插入新的一行
+    r: 取代一个字符
+    R: 一直取代，直到按下ESC为止
+    s: 剪切当前字符开始插入
+    S: 剪切当前行开始插入
+    C: 剪切到行尾开始插入
+    cc: 剪切当前行开始插入
+    ctrl c: 剪切光标后开始插入
+    ncj: 如向下删除n行开始插入
+    cw：更改光标所在处的字
+    cnw：更改n个字
+    ZZ: 保存退出
+
+    v: 字符选择
+    V: 行选择
+    Ctrl v: 块选择
+    y: 将反白的地方复制起来
+    d: 将反白的地方删除掉
+
+    yw: 复制一个单词
+    [n]yy: [n]行复制
+    [n]x: 向后剪切一[n]个字符，(cut)
+    [n]X: 向前剪切一[n]个字符
+    p: 粘贴到光标下一行
+    P: 粘贴在游标上一行
+    dw: 删除一个单词(delets)
+    D: 删到行尾
+    [n]dd: 删[n]行
+    dG: 删到文尾
+    d[n]gg: 删到文首,删n行
+    ctrl g：显示行数百分比
+    ctrl r: 重做上一个动作(redo)
+    u: 复原前一个动作(undo)
+    ctrl z: 撤销
+    .: 重复操作
+
+    /, ?word：向光标之上，下查找word
+    n: 重复正向查找操作
+    N: 重复反向查找操作
+
+    [n]h, ← 左移n
+    [n]j, ↓, + 下移n
+    [n]k, ↑, - 上移n
+    [n]l, → 右移n
+    [n] space: 右移n
+    [n] enter: 下移n
+    b: 上一个单词头
+    w: 下一个单词头
+    e: 下一个单词尾
+    ff: 光标找到本行下一个f
+    ^, 0, home 行首
+    $, end 行尾
+    H: 光标移到屏幕最上方那一行的第一个字符
+    M: 光标移到屏幕中央那一行的第一个字符
+    L: 光标移到屏幕最下方那一行的第一个字符
+    ctrl u: 上移半页
+    ctrl d: 下移半页
+    ctrl f: 相当于PgUp
+    ctrl b: 相当于PgDn
+    ctrl p: 下一行
+    ctrl n,m: 下一行
+    [n]gg: 首行，第n行
+    G: 末行
+    ctrl t: 
+    J: 将光标所在列不下一列的数据结合成同一列
+    缩徘: &lt;&lt;,&gt;&gt;
+    段数切换：&#123;/&#125;
+    括号匹配及切换：%
+
+末行模式：
+    :q! #强制退出
+    :[n1,n2]w [f_n] #[n1到n2行]保存[到f_n]
+    :wq! , :x , ZZ #三者相同，保存退出
+    :[v]ps 文件路径 #分屏; ctrl w j/k 换页
+    :n [f_n] #编辑下一个档案, [新建f_n]
+    :N #编辑上一个档案
+    :files #列出目前这个vim开启的所有档案
+    :set #显示用户改更改的设定参数
+    :set [no]nu #[取消]设定行号
+    :set all #显示目前所有的环境参数设定值
+    :set nohlsearch #设定是否将搜寻的字符串凸显
+    :set [no]autoindent #是否自动缩排？autoindent 就是自动缩排
+    :syntax on/off #相关语法显示颜色
+    :n1,n2s/o/n/g[c]  #n1到n2行[:1,$s 全局]的o变n；c确定提示
+    :e . #执行命令
+    :! command #暂时离开vi执行command</code></pre>
+<p>6.换行符<br>    cat -A filename #查看<br>        DOS: ^M$ 有CR与LF两个符号<br>        Linux: $ 仅有 LF<br>    相互间转换<br>        dos2unix [-kn] file [newfile]<br>        unix2dos [-kn] file [newfile]<br>        -k ：保留该档案原本的mtime时间格式<br>        -n ：保留原本的旧档，将转换后的内容输出到新档案<br>7.编码<br>    iconv –list #查看支持的语系数据<br>    iconv -f 原编码 -t 新编码 filename [-o newfile] #转换<br>    -f ：from<br>    -t ：to<br>    -o file：如果要保留原本的档案</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/05/install-os/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -548,8 +734,8 @@
 <p>3.安装hexo<br>    cnpm install -g hexo-cli #hexo -v<br>    npm ERR! Error: EACCES: permission denied, access ‘/usr/local/lib/node_modules问题<br>       1.sudo chmod 775 /usr/local/lib/node_modules<br>       2.sudo chown -R $USER /usr/local/lib/node_modules #推荐，改变目录拥有者<br>    apt –purge remove hexo #卸载hexo</p>
 <p>4.初始化hexo<br>    hexo init myblog<br>    cd myblog //进入这个myblog文件夹<br>    cnpm install</p>
 <p>5.0<br>    注册coding，gitee，github等用户</p>
-<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x2e;&#99;&#111;&#100;&#x69;&#x6e;&#x67;&#46;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x2e;&#99;&#111;&#100;&#x69;&#x6e;&#x67;&#46;&#99;&#111;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
-<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#49;&#50;&#x33;&#52;&#53;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#49;&#50;&#x33;&#52;&#53;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
+<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#46;&#99;&#x6f;&#x64;&#105;&#x6e;&#x67;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#46;&#99;&#x6f;&#x64;&#105;&#x6e;&#x67;&#46;&#x63;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
+<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#x31;&#x32;&#x33;&#x34;&#53;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#x31;&#x32;&#x33;&#x34;&#53;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#x6d;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
 <p>6.发布文章<br>    hexo n “我的第一篇文章” #创建<br>    vim /home/../soure/_posts/我的第一篇文章.md #编辑<br>    cd /home/../myblog<br>    hexo clean  清理<br>    hexo g      生成<br>    hexo d      部署<br>    hexo s      启动</p>
 
       
@@ -721,7 +907,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -769,12 +955,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">5k</span>
+    <span title="站点总字数">7k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">6 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
