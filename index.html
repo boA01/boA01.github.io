@@ -194,6 +194,302 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/08/centos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="啵A">
+      <meta itemprop="description" content="学习是一生，记录脚下坑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="啵A&博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/08/centos/" class="post-title-link" itemprop="url">centos</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-08 22:09:39" itemprop="dateCreated datePublished" datetime="2020-09-08T22:09:39+08:00">2020-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-09 00:34:18" itemprop="dateModified" datetime="2020-09-09T00:34:18+08:00">2020-09-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>494</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>rpm命令<br>    rpm -q <packagename> 查询指定的包是否安装<br>    rpm -ql <packagename> 查询包生成的所有文件<br>    rpm -qc *.rpm 查询包配置文件<br>    rpm -q –changelog *.rpm 查询包更新信息<br>    rpm -ivh *.rpm 安装<br>    rpm -ivh –force *.rpm 强制安装<br>    rpm -ivh –nodeps –force *.rpm 忽略依赖关系<br>    rpm -ivh –replacepkgs *.rpm 覆盖、替换安装<br>    rpm -e *.rpm 卸载<br>    rpm -e –nodeps *.rpm 忽略依赖关系<br>    rpm -e –noscripts *.rpm 不执行脚本卸载<br>    rpm -Uvh *.rpm 升级<br>      -U和-F选项均可以升级一个包。旧包不存在时，<br>      -U选项会安装新包，而-F选项不安装新包<br>详情 man rpm</p>
+<p>yum命令<br>    yum search <packagename> # 查询软件包<br>    yum install <packagename> # 安装程序包<br>    yum update <packagename> # 升级程序包<br>    yum remove/erase <packagename> # 卸载程序包<br>    yum clean all/<packagename> # 清理 本地/指定 缓存<br>    yum clean plugins#清楚插件缓存<br>    yum list [<packagename>]显示的程序包[支持通配符格式的查询]<br>    yum info <packagename> 查看程序包信息<br>    yum repolist all # 显示所有仓库<br>详情 yum –help</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/08/ubuntu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="啵A">
+      <meta itemprop="description" content="学习是一生，记录脚下坑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="啵A&博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/08/ubuntu/" class="post-title-link" itemprop="url">ubuntu</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-08 22:09:25" itemprop="dateCreated datePublished" datetime="2020-09-08T22:09:25+08:00">2020-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-09 00:32:57" itemprop="dateModified" datetime="2020-09-09T00:32:57+08:00">2020-09-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>apt命令<br>    sudo apt-get update # 更新本地包数据库<br>    sudo apt-get upgrade # 更新所有已安装的包<br>    sudo apt-get install <packagename> # 安装<br>    sudo apt-get autoremove # 自动移除不需要的包<br>    补充几个常用的清理命令：<br>        apt-get autoclean: 将已删除软件包的.deb安装文件从硬盘中删除；<br>        apt-get clean: 同上，但会把已安装的软件包的安装包也删除掉；<br>        apt-get autoremove: 删除为了满足其他软件包的依赖而安装，但现在不再需要的软件包；<br>        apt-get remove <packagename>: 删除已安装的软件包（保留配置文件）；<br>        apt-get –purge remove [软件包名]: 删除已安装包（不保留配置文件）<br>    sudo  apt-cache  search  package_name # 搜索软件<br>    sudo apt-cache show package_name # 查看软件包信息<br>    sudo apt-cache show depends package_name # 查看软件包依赖关系</p>
+<p>安装 vsftpd<br>sudo apt-get install vsftpd<br>vi /etc/vsftpd.conf<br>systemctl start vsftpd<br>systemctl status vsftpd<br>systemctl restart vsftpd</p>
+<p>安装 Apache<br>sudo apt update<br>sudo apt install apache2<br>sudo ufw allow ‘Apache Full’ #防火墙中打开80,443端口<br>sudo ufw status #查看更改<br>vi /etc/apache2/sites-eabled/000-default.cong #配置文件<br>sudo systemctl restart appache2<br>sudo sustemctl status appache2<br>管理apache服务<br>sudo /etc/init.d/apache2 [ start | stop | restart | status ]<br>或<br>service apache2 [ start | stop | restart | status ]</p>
+<p>数据库<br>    sudo apt update &amp;&amp; sudo apt upgrade -y #更新包<br>    sudo apt install mongodb #下载mongodb<br>    失败E: 软件包 mongodb-server 没有可安装候选<br>      vim /etc/apt/sources.list<br>        deb [by-hash=force] <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/deepin">https://mirrors.tuna.tsinghua.edu.cn/deepin</a> panda main contrib non-free<br>    sudo apt install mongodb-server mongodb-client<br>    apt-get install mysql-server mysql-client（MySQL安装）<br>    apt-get install redis(安装Redis)</p>
+<pre><code>systemctl start mongodb #启动
+systemctl status mongodb #查看
+systemctl restart mongodb #重启</code></pre>
+<p>  运行<br>    su<br>    mongo<br>    mysql<br>    出来mongo(mysql) shell</p>
+<p>  包管理器将创建/var/lib/mongodb 和 /var/log/mongodb<br>  配置文件 /etc/mongod.conf</p>
+<p>  卸载<br>    sudo systemctl stop mongodb<br>    sudo apt purge mongodb<br>    sudo apt autoremove</p>
+<p>防火墙<br>iptables -F #关闭<br>sudo ufw enable|disable #开启/关闭防火墙<br>sudo ufw default deny #开启了防火墙，并在系统启动时自动开启，关闭所有外部对本机的访问，但本机访问外部正常。<br>sudo ufw allow/deny 20 #开启/禁用20端口<br>sudo ufw default allow/deny #外来访问默认允许/拒绝<br>sudo ufw delete allow 53 #删除53端口的规则<br>sudo ufw status #查看</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/08/linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="啵A">
+      <meta itemprop="description" content="学习是一生，记录脚下坑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="啵A&博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/08/linux/" class="post-title-link" itemprop="url">Linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-08 22:09:12" itemprop="dateCreated datePublished" datetime="2020-09-08T22:09:12+08:00">2020-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-09 00:30:13" itemprop="dateModified" datetime="2020-09-09T00:30:13+08:00">2020-09-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Linux的发行版大体分两大类，商业公司维护的发行版Redhat(RHEL)为代表，社区组织维护的发行版Debian<br>Redhat系列的包管理方式采用的是基于RPM包的YUM包管理方式<br>Debian系列是apt-get/dpkg包管理方式</p>
+<p>1.你重置过你的服务器后，Host key verification failed.解决<br>    linux ssh-keygen -R 你要访问的IP地址<br>    win 删除~/.ssh/known_hosts内IP记录</p>
+<p>2.Package has no installation candidate的问题<br>    sudo yum/apt-get update</p>
+<p>3.xxx is not in the sudoers file.This incident will be reported.的解决方法<br>    su root<br>    chmod u+w /etc/sudoers<br>    vi /etc/sudoers<br>    复制 root ALL(ALL:ALL) ALL<br>    粘贴 root改为xxx</p>
+<p>4.用户<br>    创建用户<br>    adduser xxx<br>    sudo useradd -d /home/uftp -s /bin/bash xxx  #/etc/group记录<br>    sudo passwd xxx   #/etc/shadow记录<br>     UID：/etc/passwd<br>        0 系统管理员(统管理员不见得只有root喔)<br>             1<del>499 系统账号(100</del>499 若用户有系统账号需求时，可以使用)<br>             后为  普通账号<br>     Shell：通常/bin/bash；/sbin/nologin，用来制作纯pop邮件账号者的数据</p>
+<p>5.文件<br>    权限<br>    基本权限: rwxrwxrwx, 421421421<br>    chgrp<br>    chown [-R] user:grap<br>    chmod [-R] 777 :</p>
+<pre><code>隐藏属性: a,i
+chattr [+-=][ASacdistu]:设定
+a: 档案将只能增加数据，而不能删除也不能修改数据，只有root可设定
+c: 自动将此档案压缩，读取时候自动解压缩
+i: 档案不能被删除、改名、设定连结也无法写入资料，只有root能设定
+s: 档案被删除，他将会被完全移除出这个硬盘,如果误删了，完全无法救回
+u: 与s相反，可以用来救援该档案
+lsattr [-adR]: 查看
+
+特殊权限：sxt，421(S,T代表x为空)
+SUID: s 执行者将具有该程序拥有者的权限(例如passwd); 对程序有效
+SGID: x 执行者在执行过程中将会获得该程序群组的支持; 对档案,目录有效
+SBIT: t 用户在该目录下建立档案或目录时，仅自己与root有权力删除该档案;对目录有效
+
+预设权限: -rw-rw-rw-, 666; drwxrwxrwx, 777
+umask 022/[-S]: 预设(644)(755)/查看
+创建
+vi file_name
+touch file_name
+编辑
+vi file_name
+查看
+cat，tac
+more，less
+head，tail
+删除
+rm file_name
+移动
+mv f_n1 f_n2
+查找
+file f_n
+which [-a] command
+whereis [bmsu] f_m
+locate [-ir] keyword
+find [PATH] [option] [action]
+链接</code></pre>
+<p>6.磁盘<br>    查看<br>    分割<br>    格式化<br>    检验<br>    挂载<br>    卸载</p>
+<p>7.下载安装<br>    wget URL<br>    curl URL<br>    sudo bash filename</p>
+<p>8.进程管理<br>    ps查看进程<br>    ps -ef<br>    ps -aux<br>    杀死进程（kill）的N种方法<br>    ps -ef | grep firefox<br>    pidof firefox-bin<br>    kill -s pid</p>
+<pre><code>ps -ef | grep firefox | grep -v grep | cut -c 9-15 | xargs kill -s 9
+pgrep firefox | xargs kill -s 9
+pkill -9 firefox
+killall -9 firefox</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/08/vim-do/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -710,7 +1006,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -734,8 +1030,8 @@
 <p>3.安装hexo<br>    cnpm install -g hexo-cli #hexo -v<br>    npm ERR! Error: EACCES: permission denied, access ‘/usr/local/lib/node_modules问题<br>       1.sudo chmod 775 /usr/local/lib/node_modules<br>       2.sudo chown -R $USER /usr/local/lib/node_modules #推荐，改变目录拥有者<br>    apt –purge remove hexo #卸载hexo</p>
 <p>4.初始化hexo<br>    hexo init myblog<br>    cd myblog //进入这个myblog文件夹<br>    cnpm install</p>
 <p>5.0<br>    注册coding，gitee，github等用户</p>
-<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#46;&#99;&#x6f;&#x64;&#105;&#x6e;&#x67;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#46;&#99;&#x6f;&#x64;&#105;&#x6e;&#x67;&#46;&#x63;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
-<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#x31;&#x32;&#x33;&#x34;&#53;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#x31;&#x32;&#x33;&#x34;&#53;&#x40;&#x71;&#x71;&#x2e;&#x63;&#111;&#x6d;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
+<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#46;&#99;&#x6f;&#100;&#105;&#110;&#103;&#x2e;&#x63;&#111;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#46;&#99;&#x6f;&#100;&#105;&#110;&#103;&#x2e;&#x63;&#111;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
+<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#49;&#50;&#51;&#x34;&#53;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;">&#49;&#50;&#51;&#x34;&#53;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
 <p>6.发布文章<br>    hexo n “我的第一篇文章” #创建<br>    vim /home/../soure/_posts/我的第一篇文章.md #编辑<br>    cd /home/../myblog<br>    hexo clean  清理<br>    hexo g      生成<br>    hexo d      部署<br>    hexo s      启动</p>
 
       
@@ -876,7 +1172,7 @@
   </div>
 
   <div id="music163player">
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=1473633150&auto=0&height=66"></iframe>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=1473633150&auto=1&height=66"></iframe>
   </div>  
   <aside class="sidebar">
     <div class="sidebar-inner">
@@ -907,7 +1203,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -955,12 +1251,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">7k</span>
+    <span title="站点总字数">11k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

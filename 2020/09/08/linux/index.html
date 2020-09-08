@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="学习是一生，记录脚下坑">
-<meta property="og:type" content="website">
-<meta property="og:title" content="啵A&amp;博客">
-<meta property="og:url" content="http://yoursite.com/archives/2020/08/index.html">
+  <meta name="description" content="Linux的发行版大体分两大类，商业公司维护的发行版Redhat(RHEL)为代表，社区组织维护的发行版DebianRedhat系列的包管理方式采用的是基于RPM包的YUM包管理方式Debian系列是apt-get&#x2F;dpkg包管理方式 1.你重置过你的服务器后，Host key verification failed.解决    linux ssh-keygen -R 你要访问的IP地址    w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://yoursite.com/2020/09/08/linux/index.html">
 <meta property="og:site_name" content="啵A&amp;博客">
-<meta property="og:description" content="学习是一生，记录脚下坑">
+<meta property="og:description" content="Linux的发行版大体分两大类，商业公司维护的发行版Redhat(RHEL)为代表，社区组织维护的发行版DebianRedhat系列的包管理方式采用的是基于RPM包的YUM包管理方式Debian系列是apt-get&#x2F;dpkg包管理方式 1.你重置过你的服务器后，Host key verification failed.解决    linux ssh-keygen -R 你要访问的IP地址    w">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-08T14:09:12.000Z">
+<meta property="article:modified_time" content="2020-09-08T16:30:13.245Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/08/">
+<link rel="canonical" href="http://yoursite.com/2020/09/08/linux/">
 
 
 <script id="page-configurations">
@@ -38,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | 啵A&博客</title>
+  <title>Linux | 啵A&博客</title>
   
 
 
@@ -188,110 +190,175 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 9 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/08/linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="啵A">
+      <meta itemprop="description" content="学习是一生，记录脚下坑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="啵A&博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-08 22:09:12" itemprop="dateCreated datePublished" datetime="2020-09-08T22:09:12+08:00">2020-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-09 00:30:13" itemprop="dateModified" datetime="2020-09-09T00:30:13+08:00">2020-09-09</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <p>Linux的发行版大体分两大类，商业公司维护的发行版Redhat(RHEL)为代表，社区组织维护的发行版Debian<br>Redhat系列的包管理方式采用的是基于RPM包的YUM包管理方式<br>Debian系列是apt-get/dpkg包管理方式</p>
+<p>1.你重置过你的服务器后，Host key verification failed.解决<br>    linux ssh-keygen -R 你要访问的IP地址<br>    win 删除~/.ssh/known_hosts内IP记录</p>
+<p>2.Package has no installation candidate的问题<br>    sudo yum/apt-get update</p>
+<p>3.xxx is not in the sudoers file.This incident will be reported.的解决方法<br>    su root<br>    chmod u+w /etc/sudoers<br>    vi /etc/sudoers<br>    复制 root ALL(ALL:ALL) ALL<br>    粘贴 root改为xxx</p>
+<p>4.用户<br>    创建用户<br>    adduser xxx<br>    sudo useradd -d /home/uftp -s /bin/bash xxx  #/etc/group记录<br>    sudo passwd xxx   #/etc/shadow记录<br>     UID：/etc/passwd<br>        0 系统管理员(统管理员不见得只有root喔)<br>             1<del>499 系统账号(100</del>499 若用户有系统账号需求时，可以使用)<br>             后为  普通账号<br>     Shell：通常/bin/bash；/sbin/nologin，用来制作纯pop邮件账号者的数据</p>
+<p>5.文件<br>    权限<br>    基本权限: rwxrwxrwx, 421421421<br>    chgrp<br>    chown [-R] user:grap<br>    chmod [-R] 777 :</p>
+<pre><code>隐藏属性: a,i
+chattr [+-=][ASacdistu]:设定
+a: 档案将只能增加数据，而不能删除也不能修改数据，只有root可设定
+c: 自动将此档案压缩，读取时候自动解压缩
+i: 档案不能被删除、改名、设定连结也无法写入资料，只有root能设定
+s: 档案被删除，他将会被完全移除出这个硬盘,如果误删了，完全无法救回
+u: 与s相反，可以用来救援该档案
+lsattr [-adR]: 查看
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+特殊权限：sxt，421(S,T代表x为空)
+SUID: s 执行者将具有该程序拥有者的权限(例如passwd); 对程序有效
+SGID: x 执行者在执行过程中将会获得该程序群组的支持; 对档案,目录有效
+SBIT: t 用户在该目录下建立档案或目录时，仅自己与root有权力删除该档案;对目录有效
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-31T22:59:55+08:00"
-              content="2020-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/31/halo-blog/" itemprop="url">
-            <span itemprop="name">基于halo搭建个人博客</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-31T22:39:24+08:00"
-              content="2020-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/31/build-mongodb/" itemprop="url">
-            <span itemprop="name">build_mongodb </span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-31T21:20:08+08:00"
-              content="2020-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/31/hexo-blog/" itemprop="url">
-            <span itemprop="name">基于hexo搭建个人博客</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-31T20:06:49+08:00"
-              content="2020-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/31/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+预设权限: -rw-rw-rw-, 666; drwxrwxrwx, 777
+umask 022/[-S]: 预设(644)(755)/查看
+创建
+vi file_name
+touch file_name
+编辑
+vi file_name
+查看
+cat，tac
+more，less
+head，tail
+删除
+rm file_name
+移动
+mv f_n1 f_n2
+查找
+file f_n
+which [-a] command
+whereis [bmsu] f_m
+locate [-ir] keyword
+find [PATH] [option] [action]
+链接</code></pre>
+<p>6.磁盘<br>    查看<br>    分割<br>    格式化<br>    检验<br>    挂载<br>    卸载</p>
+<p>7.下载安装<br>    wget URL<br>    curl URL<br>    sudo bash filename</p>
+<p>8.进程管理<br>    ps查看进程<br>    ps -ef<br>    ps -aux<br>    杀死进程（kill）的N种方法<br>    ps -ef | grep firefox<br>    pidof firefox-bin<br>    kill -s pid</p>
+<pre><code>ps -ef | grep firefox | grep -v grep | cut -c 9-15 | xargs kill -s 9
+pgrep firefox | xargs kill -s 9
+pkill -9 firefox
+killall -9 firefox</code></pre>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>看着办吧！！！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="啵A 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="啵A 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
-  
-  
-  
+</div>
 
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/08/vim-do/" rel="prev" title="编辑器之神——vim">
+      <i class="fa fa-chevron-left"></i> 编辑器之神——vim
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/08/ubuntu/" rel="next" title="ubuntu">
+      ubuntu <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
