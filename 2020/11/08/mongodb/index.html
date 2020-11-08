@@ -28,7 +28,7 @@
 <meta property="og:description" content="连接mongo –host&#x3D;127.0.0.1 –prost&#x3D;27017克隆数据库db.clonedatabase(“127.0.0.1”)复制指定主机指定数据库到某数据库db.copyDatabase(‘mydb’,’temp’,’127.0.0.1’)查看所有数据库show dbsshow databases查看当前数据库[show] db&#x2F;db.getname显示当前db状态db.stats">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-08T08:53:46.000Z">
-<meta property="article:modified_time" content="2020-11-08T09:24:21.557Z">
+<meta property="article:modified_time" content="2020-11-08T17:16:24.871Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
 
@@ -219,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-08 16:53:46 / 修改时间：17:24:21" itemprop="dateCreated datePublished" datetime="2020-11-08T16:53:46+08:00">2020-11-08</time>
+              <time title="创建时间：2020-11-08 16:53:46" itemprop="dateCreated datePublished" datetime="2020-11-08T16:53:46+08:00">2020-11-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-09 01:16:24" itemprop="dateModified" datetime="2020-11-09T01:16:24+08:00">2020-11-09</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -237,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -257,17 +263,19 @@
 
       
         <p>连接<br>mongo –host=127.0.0.1 –prost=27017<br>克隆数据库<br>db.clonedatabase(“127.0.0.1”)<br>复制指定主机指定数据库到某数据库<br>db.copyDatabase(‘mydb’,’temp’,’127.0.0.1’)<br>查看所有数据库<br>show dbs<br>show databases<br>查看当前数据库<br>[show] db/db.getname<br>显示当前db状态<br>db.stats()<br>查看当前db连接的服务器地址<br>db.getmongo()<br>选择，隐式创建数据库<br>use db_name<br>删除数据库<br>db.dropDatabase()<br>恢复数据库<br>db.repairDatabase())<br>设置记录profiling (0=off,1=slow,2=all)<br>db.setProfilingLevel(1)<br>查看profiling<br>show profile<br>拷贝数据库<br>db.copyDatabase(‘mail_addr’,’mail_addr_tmp’)</p>
-<p>用户<br>添加或修改用户密码<br>db.addUser(“xxx”,’pwd’)<br>查看用户列表<br>db.system.users.find()<br>查看所有用户<br>show users<br>用户认证<br>db.auth(“xxx”,’pwd’)<br>删除用户<br>db.removeUser(“xxx”)</p>
+<p>用户<br>添加或修改用户密码<br>db.addUser(“xxx”,’pwd’)<br>db.createUser({“user”:”账号”,”pwd”:”密码”,”roles”:[{role:”角色”,db:”所属数据库”}]})<br>查看用户列表<br>db.system.users.find()<br>查看所有用户<br>show users<br>用户认证<br>db.auth(“xxx”,’pwd’)<br>删除用户<br>db.removeUser(“xxx”)</p>
 <p>集合<br>创建<br>db.creatcollection(‘collection_name’)<br>db.collection_name.insert()<br>查看<br>show collections<br>show tables<br>db.collection_name.dataSize() 数据空间大小<br>db.collection_name.count() 文档数目<br>删除<br>db.collection_name.drop()<br>改名<br>db.collection_name.renamecollection(‘new_name’)<br>创建索引<br>db.collection_name.ensureIndex({k:v}/{k:1})<br>删除索引<br>db.collection_name.dropIndex([{k:v}])<br>查看集合索引<br>db.collection_name.getIndexes()</p>
-<p>文档<br>增<br>db.collection_name.insert()<br>db.collection_name.save()<br>删<br>db.collection_name.remove({条件}<br>改<br>db.collection_name.update({条件},{操作符:{更新字段}},{upsert:ture,multi:ture})<br>db.collection_name.updatemany({条件},{操作符:{更新字段}}, false, ture)<br>$inc:递归该字段值<br>$set:设置字段值<br>$unset:删除字段值<br>$push:增加一个对象到数组尾部<br>$pushAll:增加多个对象到数组尾部<br>$pop:从数组尾部删除一个对象<br>$pull:如果匹配指定的值，删除对应对象<br>$pullAll:如果匹配任一值，删除对应对象<br>$addToSet:如果不存在就增加一个值到数组<br>查<br>db.collection_name.find({条件字段,不能为空,{}},{投影字段:0/1/-1})[.skip(n)/.count()/.sort({属性:1/-1})/.limit(n)]<br>db.collection_name.distinct(属性) 某属性的全集<br>db.collection_name.group({key:{条件},initial:{‘输出变量’:0},reduce:fuction (){}})<br>db.collection_name.find({操作符:[{条件1},…]})<br>$lt小于<br>{‘age’: {‘$lt’: 20}}<br>$gt大于<br>{‘age’: {‘$gt’: 20}}<br>$lte小于等于<br>{‘age’: {‘$lte’: 20}}<br>$gte大于等于<br>{‘age’: {‘$gte’: 20}}<br>$ne不等于<br>{‘age’: {‘$ne’: 20}}<br>$in在范围内<br>{‘age’: {‘$in’: [20, 23]}}<br>$nin不在范围内<br>{‘age’: {‘$nin’: [20, 23]}}<br>$regex匹配正则表达式<br>{‘name’: {‘$regex’: ‘^M.*’}}name以M开头<br>$exists属性是否存在<br>{‘name’: {‘$exists’: True}}name属性存在<br>$type类型判断<br>{‘age’: {‘$type’: ‘int’}}age的类型为int<br>$mod数字模操作<br>{‘age’: {‘$mod’: [5, 0]}}年龄模5余0<br>$text文本查询<br>{‘$text’: {‘$search’: ‘Mike’}}text类型的属性中包含Mike字符串<br>$where高级条件查询<br>{‘$where’: ‘obj.fans_count == obj.follows_count’}自身粉丝数等于关注数<br>$or<br>{$or:[{条件1},…]}<br>$and<br>{$and:[{条件1},…]}</p>
+<p>文档<br>增<br>db.collection_name.insert()<br>db.collection_name.save()<br>删<br>db.collection_name.remove({条件},是否删除一条)<br>改<br>db.collection_name.update({条件},{操作符:{更新字段}},{upsert:ture,multi:ture})<br>db.collection_name.updatemany({条件},{操作符:{更新字段}}, false, ture)<br>$inc:递归该字段值<br>$set:设置字段值<br>$unset:删除字段<br>$rename:重命名字段<br>$push:增加一个对象到数组尾部<br>$pushAll:增加多个对象到数组尾部<br>$pop:从数组尾部删除一个对象<br>$pull:如果匹配指定的值，删除对应对象<br>$pullAll:如果匹配任一值，删除对应对象<br>$addToSet:如果不存在就增加一个值到数组<br>查<br>db.collection_name.find({条件字段,不能为空,{}},{投影字段:0/1/-1})[.skip(n)/.count()/.sort({属性:1/-1})/.limit(n)]<br>db.collection_name.distinct(属性) 某属性的全集<br>db.collection_name.group({key:{条件},initial:{‘输出变量’:0},reduce:fuction (){}}) 分组<br>db.collection_name.aggregate([{管道:{表达式}},…])<br>常用管道<br>$group 文档分组 似group by<br>{$group:{_id:”$属性”/null,rs:{$sum:”$属性”}}}<br>{$group:{_id:null,total_num:{$sum:1},total_avt:{$avg:”$avg”}}}<br>$match 数据过滤 似where<br>{$match:{属性:值}}<br>$project 投影 似as<br>$sort 聚合数据排序 似order by<br>{$group:{_id:”$属性”/null,rs:{$sum:”$属性”}},$sort:{rs:1}}<br>$skip 跳过文档数 类似skip<br>$limit 返回文档数 类似limit<br>$lookup 左外连接 似left out join<br>$unwind 将列表展开<br>{$unwind:’$score’}<br>常用表达式<br>$sum 总和 $sum:1同count表示统计<br>$avg 平均<br>$min 最小值<br>$max 最大值<br>$map<br>$reduce<br>$eq 等于<br>下列操作符</p>
+<p>db.collection_name.find({操作符})<br>常用操作符<br>$lt小于<br>{‘age’: {‘$lt’: 20}}<br>$gt大于<br>{‘age’: {‘$gt’: 20}}<br>$lte小于等于<br>{‘age’: {‘$lte’: 20}}<br>$gte大于等于<br>{‘age’: {‘$gte’: 20}}<br>$ne不等于<br>{‘age’: {‘$ne’: 20}}<br>$in在范围内<br>{‘age’: {‘$in’: [20, 23]}}<br>$nin不在范围内<br>{‘age’: {‘$nin’: [20, 23]}}<br>$regex匹配正则表达式<br>{‘name’: {‘$regex’: ‘^M.*’}}name以M开头<br>$exists属性是否存在<br>{‘name’: {‘$exists’: True}}name属性存在<br>$type类型判断<br>{‘age’: {‘$type’: ‘int’}}age的类型为int<br>$mod数字模操作<br>{‘age’: {‘$mod’: [5, 0]}}年龄模5余0<br>$text文本查询<br>{‘$text’: {‘$search’: ‘Mike’}}text类型的属性中包含Mike字符串<br>$where高级条件查询<br>{‘$where’: ‘obj.fans_count == obj.follows_count’}自身粉丝数等于关注数<br>$or<br>{$or:[{条件1},…]}<br>$and<br>{$and:[{条件1},…]}</p>
 <p>####################################<br>import pymongo</p>
-<p>client = pymongo.MongoClient(host=’127.0.0.1’)</p>
-<h1 id="client-MongoClient-‘mongodb-用户名-密码-localhost-27017-数据库名’"><a href="#client-MongoClient-‘mongodb-用户名-密码-localhost-27017-数据库名’" class="headerlink" title="client = MongoClient(‘mongodb://用户名:密码@localhost:27017/数据库名’)"></a>client = MongoClient(‘mongodb://用户名:密码@localhost:27017/数据库名’)</h1><p>db_list = client.list_database_names()<br>print(db_list)</p>
-<p>db = client.test1</p>
-<h1 id="db-client-‘test1’"><a href="#db-client-‘test1’" class="headerlink" title="db = client[‘test1’]"></a>db = client[‘test1’]</h1><h1 id="print-db"><a href="#print-db" class="headerlink" title="print(db)"></a>print(db)</h1><p>ct = db.c3</p>
-<h1 id="collection-db-‘c3’"><a href="#collection-db-‘c3’" class="headerlink" title="collection = db[‘c3’]"></a>collection = db[‘c3’]</h1><h1 id="person"><a href="#person" class="headerlink" title="person = {"></a>person = {</h1><h1 id="‘name’-“c”"><a href="#‘name’-“c”" class="headerlink" title="‘name’: “c”,"></a>‘name’: “c”,</h1><h1 id="‘age’-‘2’"><a href="#‘age’-‘2’" class="headerlink" title="‘age’: ‘2’,"></a>‘age’: ‘2’,</h1><h1 id="‘title’-‘very-good-’"><a href="#‘title’-‘very-good-’" class="headerlink" title="‘title’: ‘very good!!!’,"></a>‘title’: ‘very good!!!’,</h1><h1 id="‘hiredate’-datetime-datetime-now"><a href="#‘hiredate’-datetime-datetime-now" class="headerlink" title="‘hiredate’: datetime.datetime.now()"></a>‘hiredate’: datetime.datetime.now()</h1><h1 id=""><a href="#" class="headerlink" title="}"></a>}</h1><h1 id="ct-insert-one-person"><a href="#ct-insert-one-person" class="headerlink" title="ct.insert_one(person)"></a>ct.insert_one(person)</h1><h1 id="result-ct-insert-p1-p2"><a href="#result-ct-insert-p1-p2" class="headerlink" title="result = ct.insert([p1, p2])"></a>result = ct.insert([p1, p2])</h1><h1 id="result-ct-insert-many-p1-p2"><a href="#result-ct-insert-many-p1-p2" class="headerlink" title="result = ct.insert_many([p1, p2])"></a>result = ct.insert_many([p1, p2])</h1><h1 id="ct-update-one-‘age’-2-‘-set’-‘age’-2"><a href="#ct-update-one-‘age’-2-‘-set’-‘age’-2" class="headerlink" title="ct.update_one({‘age’:2},{‘$set’: {‘age’: 2}})"></a>ct.update_one({‘age’:2},{‘$set’: {‘age’: 2}})</h1><h1 id="ct-update-many"><a href="#ct-update-many" class="headerlink" title="ct.update_many()"></a>ct.update_many()</h1><h1 id="ct-drop"><a href="#ct-drop" class="headerlink" title="ct.drop"></a>ct.drop</h1><h1 id="ct-remove-“-id”-“5f618b03d43f336dbe0935f3”"><a href="#ct-remove-“-id”-“5f618b03d43f336dbe0935f3”" class="headerlink" title="ct.remove({“_id”: “5f618b03d43f336dbe0935f3”})"></a>ct.remove({“_id”: “5f618b03d43f336dbe0935f3”})</h1><p>result = ct.find({}, {‘_id’:0})</p>
-<h1 id="results-collection-find-‘name’-’python’"><a href="#results-collection-find-‘name’-’python’" class="headerlink" title="results = collection.find({‘name’:’python’})"></a>results = collection.find({‘name’:’python’})</h1><h1 id="for-result-in-results"><a href="#for-result-in-results" class="headerlink" title="for result in results:"></a>for result in results:</h1><p>for i in result:<br>    print(i.get(‘age’))<br>    # print(i[‘age’])</p>
-<h1 id="results-collection-find-‘age’-‘-gt’-20-条件查询"><a href="#results-collection-find-‘age’-‘-gt’-20-条件查询" class="headerlink" title="results = collection.find({‘age’:{‘$gt’:20}})#条件查询"></a>results = collection.find({‘age’:{‘$gt’:20}})#条件查询</h1><h1 id="s-ct-find-‘age’-‘-gt’-20-sort-‘age’-1"><a href="#s-ct-find-‘age’-‘-gt’-20-sort-‘age’-1" class="headerlink" title="s = ct.find({‘age’: {‘$gt’: 20}}.sort(‘age’, -1))"></a>s = ct.find({‘age’: {‘$gt’: 20}}.sort(‘age’, -1))</h1>
+<p>client = pymongo.MongoClient(host=’127.0.0.1’)<br>client = MongoClient(‘mongodb://用户名:密码@localhost:27017/数据库名’)</p>
+<p>db_list = client.list_database_names()<br>print(db_list)</p>
+<p>db = client.test1<br>db = client[‘test1’]<br>print(db)</p>
+<p>ct = db.c3<br>collection = db[‘c3’]</p>
+<p>person = {<br>     ‘name’: “c”,<br>     ‘age’: ‘2’,<br>     ‘title’: ‘very good!!!’,<br>     ‘hiredate’: datetime.datetime.now()<br>}<br>ct.insert_one(person)<br>result = ct.insert([p1, p2])<br>result = ct.insert_many([p1, p2])<br>ct.update_one({‘age’:2},{‘$set’: {‘age’: 2}})<br>ct.update_many()<br>ct.drop<br>ct.remove({“_id”: “5f618b03d43f336dbe0935f3”})</p>
+<p>result = ct.find({}, {‘_id’:0})<br>results = collection.find({‘name’:’python’})<br>for result in results:<br>for i in result:<br>    print(i.get(‘age’))<br>    # print(i[‘age’])</p>
+<p>results = collection.find({‘age’:{‘$gt’:20}})#条件查询<br>s = ct.find({‘age’: {‘$gt’: 20}}.sort(‘age’, -1))</p>
+
     </div>
 
     
@@ -371,7 +379,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#client-MongoClient-%E2%80%98mongodb-%E7%94%A8%E6%88%B7%E5%90%8D-%E5%AF%86%E7%A0%81-localhost-27017-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E2%80%99"><span class="nav-number">1.</span> <span class="nav-text">client &#x3D; MongoClient(‘mongodb:&#x2F;&#x2F;用户名:密码@localhost:27017&#x2F;数据库名’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#db-client-%E2%80%98test1%E2%80%99"><span class="nav-number">2.</span> <span class="nav-text">db &#x3D; client[‘test1’]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print-db"><span class="nav-number">3.</span> <span class="nav-text">print(db)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#collection-db-%E2%80%98c3%E2%80%99"><span class="nav-number">4.</span> <span class="nav-text">collection &#x3D; db[‘c3’]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#person"><span class="nav-number">5.</span> <span class="nav-text">person &#x3D; {</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%98name%E2%80%99-%E2%80%9Cc%E2%80%9D"><span class="nav-number">6.</span> <span class="nav-text">‘name’: “c”,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%98age%E2%80%99-%E2%80%982%E2%80%99"><span class="nav-number">7.</span> <span class="nav-text">‘age’: ‘2’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%98title%E2%80%99-%E2%80%98very-good-%E2%80%99"><span class="nav-number">8.</span> <span class="nav-text">‘title’: ‘very good!!!’,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%98hiredate%E2%80%99-datetime-datetime-now"><span class="nav-number">9.</span> <span class="nav-text">‘hiredate’: datetime.datetime.now()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">10.</span> <span class="nav-text">}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ct-insert-one-person"><span class="nav-number">11.</span> <span class="nav-text">ct.insert_one(person)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#result-ct-insert-p1-p2"><span class="nav-number">12.</span> <span class="nav-text">result &#x3D; ct.insert([p1, p2])</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#result-ct-insert-many-p1-p2"><span class="nav-number">13.</span> <span class="nav-text">result &#x3D; ct.insert_many([p1, p2])</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ct-update-one-%E2%80%98age%E2%80%99-2-%E2%80%98-set%E2%80%99-%E2%80%98age%E2%80%99-2"><span class="nav-number">14.</span> <span class="nav-text">ct.update_one({‘age’:2},{‘$set’: {‘age’: 2}})</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ct-update-many"><span class="nav-number">15.</span> <span class="nav-text">ct.update_many()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ct-drop"><span class="nav-number">16.</span> <span class="nav-text">ct.drop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ct-remove-%E2%80%9C-id%E2%80%9D-%E2%80%9C5f618b03d43f336dbe0935f3%E2%80%9D"><span class="nav-number">17.</span> <span class="nav-text">ct.remove({“_id”: “5f618b03d43f336dbe0935f3”})</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#results-collection-find-%E2%80%98name%E2%80%99-%E2%80%99python%E2%80%99"><span class="nav-number">18.</span> <span class="nav-text">results &#x3D; collection.find({‘name’:’python’})</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for-result-in-results"><span class="nav-number">19.</span> <span class="nav-text">for result in results:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#results-collection-find-%E2%80%98age%E2%80%99-%E2%80%98-gt%E2%80%99-20-%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="nav-number">20.</span> <span class="nav-text">results &#x3D; collection.find({‘age’:{‘$gt’:20}})#条件查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#s-ct-find-%E2%80%98age%E2%80%99-%E2%80%98-gt%E2%80%99-20-sort-%E2%80%98age%E2%80%99-1"><span class="nav-number">21.</span> <span class="nav-text">s &#x3D; ct.find({‘age’: {‘$gt’: 20}}.sort(‘age’, -1))</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -435,7 +442,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">24k</span>
+    <span title="站点总字数">25k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
