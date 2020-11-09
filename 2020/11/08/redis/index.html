@@ -7,15 +7,15 @@
   
   <title>redis | 啵A&amp;博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="启动Redis 1redis-server [--port 6379] 连接Redis 1redis-cli [-h host -p port -a passwd db n] [--raw] 停止Redis 1redis-cli shutdown 测试连通性 1ping 选择数据库 1select 0-15 查看键 1keys * 键总数 1dbsize 键是否存在 1exists key1 ke">
+  <meta name="description" content="通用 启动Redis 1redis-server [--port 6379] 连接Redis 1redis-cli [-h host -p port -a passwd db n] [--raw] 停止Redis 1redis-cli shutdown 测试连通性 1ping 选择数据库 1select 0-15 查看键 1keys * 键总数 1dbsize 键是否存在 1exists key1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis">
 <meta property="og:url" content="http://yoursite.com/2020/11/08/redis/index.html">
 <meta property="og:site_name" content="啵A&amp;博客">
-<meta property="og:description" content="启动Redis 1redis-server [--port 6379] 连接Redis 1redis-cli [-h host -p port -a passwd db n] [--raw] 停止Redis 1redis-cli shutdown 测试连通性 1ping 选择数据库 1select 0-15 查看键 1keys * 键总数 1dbsize 键是否存在 1exists key1 ke">
+<meta property="og:description" content="通用 启动Redis 1redis-server [--port 6379] 连接Redis 1redis-cli [-h host -p port -a passwd db n] [--raw] 停止Redis 1redis-cli shutdown 测试连通性 1ping 选择数据库 1select 0-15 查看键 1keys * 键总数 1dbsize 键是否存在 1exists key1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-08T08:54:08.000Z">
-<meta property="article:modified_time" content="2020-11-09T08:58:58.146Z">
+<meta property="article:modified_time" content="2020-11-09T09:11:35.932Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
   
@@ -88,38 +88,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>启动Redis</p>
+        <h3>通用</h3>
+启动Redis
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server [--port 6379]</span><br></pre></td></tr></table></figure>
-<p>连接Redis</p>
+连接Redis
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli [-h host -p port -a passwd db n] [--raw]</span><br></pre></td></tr></table></figure>
-<p>停止Redis</p>
+停止Redis
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli shutdown</span><br></pre></td></tr></table></figure>
-<p>测试连通性</p>
+测试连通性
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping</span><br></pre></td></tr></table></figure>
-<p>选择数据库</p>
+选择数据库
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 0-15</span><br></pre></td></tr></table></figure>
-<p>查看键</p>
+查看键
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
-<p>键总数</p>
+键总数
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dbsize</span><br></pre></td></tr></table></figure>
-<p>键是否存在</p>
+键是否存在
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists key1 key2 ... </span><br></pre></td></tr></table></figure>
-<p>随机返回一个键</p>
+随机返回一个键
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">randomkey</span><br></pre></td></tr></table></figure>
-<p>删除键</p>
+删除键
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del keyname</span><br></pre></td></tr></table></figure>
-<p>修改键名</p>
+修改键名
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rename k n_k</span><br><span class="line">renamenx k n_k(n_k不存在时)</span><br></pre></td></tr></table></figure>
-<p>移动键到数据库n</p>
+移动键到数据库n
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">move keyname n</span><br></pre></td></tr></table></figure>
-<p>查询键的生命周期（-1永久）</p>
+查询键的生命周期（-1永久）
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ttl kn</span><br></pre></td></tr></table></figure>
-<p>设置过期时间</p>
+设置过期时间
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">秒语法：expire kn 10</span><br><span class="line">毫秒语法：pexpire kn 10000</span><br><span class="line">永久语法：persist kn</span><br></pre></td></tr></table></figure>
-<p>获取值类型</p>
+获取值类型
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> keyname</span><br></pre></td></tr></table></figure>
-<hr>
-<p>###string</p>
+---
+
+<h3>string</h3>
+
 <p>设置[多]键值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[m]<span class="built_in">set</span> k v [EX seconds] [PX millisexonds] [NX|XX]</span><br><span class="line">setnx k v</span><br></pre></td></tr></table></figure>
 <p>获取[多]值</p>
@@ -139,7 +142,8 @@
 <p>序列化</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dump k</span><br></pre></td></tr></table></figure>
 <hr>
-<p>###hash</p>
+<h3>hash</h3>
+
 <p>设置键(h_k)值(kn vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hmset h_k k1 v1 k2 v2 ...</span><br><span class="line">hsetnx h_k k v 不存在k时放入</span><br></pre></td></tr></table></figure>
 <p>获取字段值</p>
@@ -157,7 +161,8 @@
 <p>删除键值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hdel h_k kx</span><br><span class="line">del h_k</span><br></pre></td></tr></table></figure>
 <hr>
-<p>###list</p>
+<h3>list</h3>
+
 <p>创建键(l_k)值(vn(可重复))</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r/lpush l_k v1 v2 v2 ...</span><br></pre></td></tr></table></figure>
 <p>位置n插入v（默认0）</p>
@@ -173,7 +178,8 @@
 <p>保留范围内(m至n)的元素</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrim l_k start(m) stop(n)</span><br></pre></td></tr></table></figure>
 <hr>
-<p>###set</p>
+<h3>set</h3>
+
 <p>创建键(s_k)值(vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
 <p>查看所有元素</p>
@@ -199,7 +205,8 @@
 <p>删除s_k</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del s_k</span><br></pre></td></tr></table></figure>
 <hr>
-<p>###zset(按score_double排序)</p>
+<h3>zset(按score_double排序)</h3>
+
 <p>创建键(zs_k)值(score_double(可重复) vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd zs_k 456 v1 478 v2 478 v3</span><br></pre></td></tr></table></figure>
 <p>遍历元素</p>
@@ -219,12 +226,12 @@
 <p>删除元素</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定：zrem zs_k km [kn ..]</span><br><span class="line">范围：zremrangebyscore zs_k min max</span><br></pre></td></tr></table></figure>
 <hr>
-<p>###python</p>
+<h3>python</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis <span class="keyword">as</span> rd</span><br><span class="line"></span><br><span class="line">client = rd.Redis(host=<span class="string">&#x27;localhost&#x27;</span>, port = <span class="number">6379</span>, db = <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">print(client.keys())</span><br><span class="line">client.set(<span class="string">&#x27;book5&#x27;</span>,<span class="string">&#x27;redis&#x27;</span>)</span><br><span class="line">client.append(<span class="string">&#x27;book5&#x27;</span>, <span class="string">&#x27;-client&#x27;</span>)</span><br><span class="line">print(client.get(<span class="string">&#x27;book5&#x27;</span>).decode())</span><br><span class="line">client.lpush(<span class="string">&#x27;zb&#x27;</span>, <span class="number">18</span>, <span class="string">&#x27;cs&#x27;</span>, <span class="string">&#x27;play&#x27;</span>)</span><br><span class="line">print(client.lrange(<span class="string">&#x27;zb&#x27;</span>, <span class="number">0</span>, <span class="number">2</span>))</span><br><span class="line">client.sadd(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;zb&#x27;</span>, <span class="string">&#x27;sx&#x27;</span>)</span><br><span class="line">print(client.smembers(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"></span><br><span class="line">all_info = client.keys</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> all_info():</span><br><span class="line">    print(key.decode())</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhabeimr000axv8phmj03ppq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhabum1q000a578phys446in" class="article-share-link">Share</a>
       
       
     </footer>
