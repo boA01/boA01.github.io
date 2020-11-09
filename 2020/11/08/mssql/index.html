@@ -7,15 +7,15 @@
   
   <title>mssql | 啵A&amp;博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&#x2F;创建数据库&#x2F;create database zb_m; &#x2F;选择数据库&#x2F;use zb_m; &#x2F;创建表&#x2F;create table student(    id char(10),    name char(10),    sex char(5) check(‘男’,’女’),    check(sex&#x3D;”男” and name notlike ‘ms.%’)); create table peopl">
+  <meta name="description" content="创建数据库create database zb_m; 选择数据库use zb_m; 创建表create table student(    id char(10),    name char(10),    sex char(5) check(‘男’,’女’),    check(sex&#x3D;”男” and name notlike ‘ms.%’)); create table people(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mssql">
 <meta property="og:url" content="http://yoursite.com/2020/11/08/mssql/index.html">
 <meta property="og:site_name" content="啵A&amp;博客">
-<meta property="og:description" content="&#x2F;创建数据库&#x2F;create database zb_m; &#x2F;选择数据库&#x2F;use zb_m; &#x2F;创建表&#x2F;create table student(    id char(10),    name char(10),    sex char(5) check(‘男’,’女’),    check(sex&#x3D;”男” and name notlike ‘ms.%’)); create table peopl">
+<meta property="og:description" content="创建数据库create database zb_m; 选择数据库use zb_m; 创建表create table student(    id char(10),    name char(10),    sex char(5) check(‘男’,’女’),    check(sex&#x3D;”男” and name notlike ‘ms.%’)); create table people(">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-08T08:54:27.000Z">
-<meta property="article:modified_time" content="2020-11-08T09:12:10.107Z">
+<meta property="article:modified_time" content="2020-11-09T10:06:08.336Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
   
@@ -88,9 +88,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>/<em>创建数据库</em>/<br>create database zb_m;</p>
-<p>/<em>选择数据库</em>/<br>use zb_m;</p>
-<p>/<em>创建表</em>/<br>create table student<br>(<br>    id char(10),<br>    name char(10),<br>    sex char(5) check(‘男’,’女’),<br>    check(sex=”男” and name notlike ‘ms.%’)<br>);</p>
+        <p><strong>创建数据库</strong><br>create database zb_m;</p>
+<p><strong>选择数据库</strong><br>use zb_m;</p>
+<p><strong>创建表</strong><br>create table student<br>(<br>    id char(10),<br>    name char(10),<br>    sex char(5) check(‘男’,’女’),<br>    check(sex=”男” and name notlike ‘ms.%’)<br>);</p>
 <p>create table people<br>(<br>    bit_col BIT,          /<em>0, 1 或 NULL</em>/<br>    bigint_col bigint,    /<em>-2^63 至 2^63 -1</em>/</p>
 <pre><code>int_col INT,          /*-2^31 至 2^31 -1*/
 
@@ -115,25 +115,25 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
 <p>ALTER TABLE people</p>
 <p>ALTER COLUMN val3 VARCHAR (10) NOT NULL;</p>
 <p>ALTER TABLE people<br>ALTER COLUMN val4 NVARCHAR (10) NOT NULL;</p>
-<p>/<em>将created_at列的默认值设置为当前日期和时间</em>/<br>ALTER TABLE people<br>ADD CONSTRAINT df_current_time<br>DEFAULT CURRENT_TIMESTAMP FOR created_at;</p>
+<p><strong>将created_at列的默认值设置为当前日期和时间</strong><br>ALTER TABLE people<br>ADD CONSTRAINT df_current_time<br>DEFAULT CURRENT_TIMESTAMP FOR created_at;</p>
 <p>insert into people values<br>(<br>    1,<br>    -99,<br>    99,<br>    -10,<br>    254,<br>    20.01,<br>    ‘zb’,<br>    N’马’,<br>    ‘kdfk’,<br>    N’易百教程网’,<br>    ‘2020-06-23 09:36:37’,/<em>GETDATE()函数类似于其他数据库系统(如MySQL)中的NOW()函数</em>/<br>    ‘2020-01-01’,<br>    ‘10:10:00’<br>);</p>
-<p>/<em>插入数据</em>/<br>insert into student(id, name,sex) values<br>(‘123’,’zb_m’,’man’),<br>(‘456’,’xb’,’man’),<br>(‘234’,’sb’,’woman’);</p>
-<p>/<em>查询数据</em>/<br>select * from student [limit 0,2];</p>
-<p>/<em>条件查询</em>/<br>select name from student where id &lt; ‘345’;</p>
-<p>/<em>创建标识列</em>/<br>identity(10,2);<br>/<em>第一条记录标识列的值是：10，第二条记录标识列的<br>值是：12，第三条记录标识列的值为：14，依此类推。</em>/</p>
-<p>/<em>创建指定列（索引）</em>/<br>alter table student add ip char;</p>
-<p>/<em>修改列的类型，大小，约束</em>/<br>ALTER TABLE student<br>ALTER COLUMN id int;</p>
-<p>/<em>删除指定列（索引）</em>/<br>alter table student drop column id;</p>
-<p>/<em>添加指定列</em>/<br>update student set id=123;</p>
-<p>/<em>删除指定行（元组）</em>/<br>delete from student where id in (234,123);</p>
-<p>/<em>清除数据</em>/<br>delete from student;<br>TRUNCATE TABLE student;</p>
-<p>/<em>重命名表</em>/<br>exec sp_rename ‘student’,’people’;</p>
-<p>/<em>删除表</em>/<br>drop table *;</p>
+<p><strong>插入数据</strong><br>insert into student(id, name,sex) values<br>(‘123’,’zb_m’,’man’),<br>(‘456’,’xb’,’man’),<br>(‘234’,’sb’,’woman’);</p>
+<p><strong>查询数据</strong><br>select * from student [limit 0,2];</p>
+<p><strong>条件查询</strong><br>select name from student where id &lt; ‘345’;</p>
+<p><strong>创建标识列</strong><br>identity(10,2);<br><strong>第一条记录标识列的值是：10，第二条记录标识列的值是：12，第三条记录标识列的值为：14，依此类推。</strong></p>
+<p><strong>创建指定列（索引）</strong><br>alter table student add ip char;</p>
+<p><strong>修改列的类型，大小，约束</strong><br>ALTER TABLE student<br>ALTER COLUMN id int;</p>
+<p><strong>删除指定列（索引）</strong><br>alter table student drop column id;</p>
+<p><strong>添加指定列</strong><br>update student set id=123;</p>
+<p><strong>删除指定行（元组）</strong><br>delete from student where id in (234,123);</p>
+<p><strong>清除数据</strong><br>delete from student;<br>TRUNCATE TABLE student;</p>
+<p><strong>重命名表</strong><br>exec sp_rename ‘student’,’people’;</p>
+<p><strong>删除表</strong><br>drop table *;</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhabum1d0007578p8dti0ewn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhadsny50008xg8p00prb3ga" class="article-share-link">Share</a>
       
       
     </footer>

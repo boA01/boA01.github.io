@@ -7,15 +7,15 @@
   
   <title>ubuntu | 啵A&amp;博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="apt命令    sudo apt-get update # 更新本地包数据库    sudo apt-get upgrade # 更新所有已安装的包    sudo apt-get install  # 安装    sudo apt-get autoremove # 自动移除不需要的包    补充几个常用的清理命令：        apt-get autoclean: 将已删除软件包的.deb安">
+  <meta name="description" content="apt命令  12345678910111213sudo apt-get update # 更新本地包数据库sudo apt-get upgrade # 更新所有已安装的包sudo apt-get install &lt;packagename&gt; # 安装sudo apt-get autoremove # 自动移除不需要的包补充几个常用的清理命令：  apt-get autoclean: 将">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu">
 <meta property="og:url" content="http://yoursite.com/2020/09/08/ubuntu/index.html">
 <meta property="og:site_name" content="啵A&amp;博客">
-<meta property="og:description" content="apt命令    sudo apt-get update # 更新本地包数据库    sudo apt-get upgrade # 更新所有已安装的包    sudo apt-get install  # 安装    sudo apt-get autoremove # 自动移除不需要的包    补充几个常用的清理命令：        apt-get autoclean: 将已删除软件包的.deb安">
+<meta property="og:description" content="apt命令  12345678910111213sudo apt-get update # 更新本地包数据库sudo apt-get upgrade # 更新所有已安装的包sudo apt-get install &lt;packagename&gt; # 安装sudo apt-get autoremove # 自动移除不需要的包补充几个常用的清理命令：  apt-get autoclean: 将">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-08T14:09:25.000Z">
-<meta property="article:modified_time" content="2020-09-08T16:32:57.881Z">
+<meta property="article:modified_time" content="2020-11-09T10:06:21.896Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
   
@@ -88,22 +88,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>apt命令<br>    sudo apt-get update # 更新本地包数据库<br>    sudo apt-get upgrade # 更新所有已安装的包<br>    sudo apt-get install <packagename> # 安装<br>    sudo apt-get autoremove # 自动移除不需要的包<br>    补充几个常用的清理命令：<br>        apt-get autoclean: 将已删除软件包的.deb安装文件从硬盘中删除；<br>        apt-get clean: 同上，但会把已安装的软件包的安装包也删除掉；<br>        apt-get autoremove: 删除为了满足其他软件包的依赖而安装，但现在不再需要的软件包；<br>        apt-get remove <packagename>: 删除已安装的软件包（保留配置文件）；<br>        apt-get –purge remove [软件包名]: 删除已安装包（不保留配置文件）<br>    sudo  apt-cache  search  package_name # 搜索软件<br>    sudo apt-cache show package_name # 查看软件包信息<br>    sudo apt-cache show depends package_name # 查看软件包依赖关系</p>
-<p>安装 vsftpd<br>sudo apt-get install vsftpd<br>vi /etc/vsftpd.conf<br>systemctl start vsftpd<br>systemctl status vsftpd<br>systemctl restart vsftpd</p>
-<p>安装 Apache<br>sudo apt update<br>sudo apt install apache2<br>sudo ufw allow ‘Apache Full’ #防火墙中打开80,443端口<br>sudo ufw status #查看更改<br>vi /etc/apache2/sites-eabled/000-default.cong #配置文件<br>sudo systemctl restart appache2<br>sudo sustemctl status appache2<br>管理apache服务<br>sudo /etc/init.d/apache2 [ start | stop | restart | status ]<br>或<br>service apache2 [ start | stop | restart | status ]</p>
-<p>数据库<br>    sudo apt update &amp;&amp; sudo apt upgrade -y #更新包<br>    sudo apt install mongodb #下载mongodb<br>    失败E: 软件包 mongodb-server 没有可安装候选<br>      vim /etc/apt/sources.list<br>        deb [by-hash=force] <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/deepin">https://mirrors.tuna.tsinghua.edu.cn/deepin</a> panda main contrib non-free<br>    sudo apt install mongodb-server mongodb-client<br>    apt-get install mysql-server mysql-client（MySQL安装）<br>    apt-get install redis(安装Redis)</p>
-<pre><code>systemctl start mongodb #启动
-systemctl status mongodb #查看
-systemctl restart mongodb #重启</code></pre>
-<p>  运行<br>    su<br>    mongo<br>    mysql<br>    出来mongo(mysql) shell</p>
-<p>  包管理器将创建/var/lib/mongodb 和 /var/log/mongodb<br>  配置文件 /etc/mongod.conf</p>
-<p>  卸载<br>    sudo systemctl stop mongodb<br>    sudo apt purge mongodb<br>    sudo apt autoremove</p>
-<p>防火墙<br>iptables -F #关闭<br>sudo ufw enable|disable #开启/关闭防火墙<br>sudo ufw default deny #开启了防火墙，并在系统启动时自动开启，关闭所有外部对本机的访问，但本机访问外部正常。<br>sudo ufw allow/deny 20 #开启/禁用20端口<br>sudo ufw default allow/deny #外来访问默认允许/拒绝<br>sudo ufw delete allow 53 #删除53端口的规则<br>sudo ufw status #查看</p>
+        <h3>apt命令</h3>
 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update <span class="comment"># 更新本地包数据库</span></span><br><span class="line">sudo apt-get upgrade <span class="comment"># 更新所有已安装的包</span></span><br><span class="line">sudo apt-get install &lt;packagename&gt; <span class="comment"># 安装</span></span><br><span class="line">sudo apt-get autoremove <span class="comment"># 自动移除不需要的包</span></span><br><span class="line">补充几个常用的清理命令：</span><br><span class="line">  apt-get autoclean: 将已删除软件包的.deb安装文件从硬盘中删除；</span><br><span class="line">  apt-get clean: 同上，但会把已安装的软件包的安装包也删除掉；</span><br><span class="line">  apt-get autoremove: 删除为了满足其他软件包的依赖而安装，但现在不再需要的软件包；</span><br><span class="line">  apt-get remove &lt;packagename&gt;: 删除已安装的软件包（保留配置文件）；</span><br><span class="line">  apt-get --purge remove [软件包名]: 删除已安装包（不保留配置文件）</span><br><span class="line">sudo  apt-cache  search  package_name <span class="comment"># 搜索软件</span></span><br><span class="line">sudo apt-cache show package_name <span class="comment"># 查看软件包信息</span></span><br><span class="line">sudo apt-cache show depends package_name <span class="comment"># 查看软件包依赖关系</span></span><br></pre></td></tr></table></figure>
+
+<h3>安装 vsftpd</h3>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vsftpd</span><br><span class="line">vi /etc/vsftpd.conf</span><br><span class="line">systemctl start vsftpd</span><br><span class="line">systemctl status vsftpd</span><br><span class="line">systemctl restart vsftpd</span><br></pre></td></tr></table></figure>
+
+<h3>安装 Apache</h3>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install apache2</span><br><span class="line">sudo ufw allow <span class="string">&#x27;Apache Full&#x27;</span> <span class="comment">#防火墙中打开80,443端口</span></span><br><span class="line">sudo ufw status <span class="comment">#查看更改</span></span><br><span class="line">vi /etc/apache2/sites-eabled/000-default.cong <span class="comment">#配置文件</span></span><br><span class="line">sudo systemctl restart appache2</span><br><span class="line">sudo sustemctl status appache2</span><br><span class="line">管理apache服务</span><br><span class="line">sudo /etc/init.d/apache2 [ start | stop | restart | status ]</span><br><span class="line">或</span><br><span class="line">service apache2 [ start | stop | restart | status ]</span><br></pre></td></tr></table></figure>
+
+<h3>数据库</h3>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade -y <span class="comment">#更新包</span></span><br><span class="line">sudo apt install mongodb <span class="comment">#下载mongodb</span></span><br></pre></td></tr></table></figure>
+<pre><code>失败E: 软件包 mongodb-server 没有可安装候选
+  vim /etc/apt/sources.list
+    deb [by-hash=force] https://mirrors.tuna.tsinghua.edu.cn/deepin panda main contrib non-free</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mongodb-server mongodb-client</span><br><span class="line">apt-get install mysql-server mysql-client（MySQL安装）</span><br><span class="line">apt-get install redis(安装Redis)</span><br><span class="line"></span><br><span class="line">systemctl start mongodb <span class="comment">#启动</span></span><br><span class="line">systemctl status mongodb <span class="comment">#查看</span></span><br><span class="line">systemctl restart mongodb <span class="comment">#重启</span></span><br></pre></td></tr></table></figure>
+
+<p>  <strong>运行</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   su</span><br><span class="line">   mongo</span><br><span class="line">   mysql</span><br><span class="line">redis-cli</span><br><span class="line">   出来mongo(mysql) shell</span><br></pre></td></tr></table></figure>
+
+<p>  包管理器将创建/var/lib/mongodb 和 /var/log/mongodb**<br>  配置文件 /etc/mongod.conf</p>
+<p>  <strong>卸载</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop mongodb</span><br><span class="line">sudo apt purge mongodb</span><br><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
+
+<h3>防火墙</h3>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iptables -F <span class="comment">#关闭</span></span><br><span class="line">sudo ufw <span class="built_in">enable</span>|<span class="built_in">disable</span> <span class="comment">#开启/关闭防火墙</span></span><br><span class="line">sudo ufw default deny <span class="comment">#开启了防火墙，并在系统启动时自动开启，关闭所有外部对本机的访问，但本机访问外部正常。</span></span><br><span class="line">sudo ufw allow/deny 20 <span class="comment">#开启/禁用20端口</span></span><br><span class="line">sudo ufw default allow/deny <span class="comment">#外来访问默认允许/拒绝</span></span><br><span class="line">sudo ufw delete allow 53 <span class="comment">#删除53端口的规则</span></span><br><span class="line">sudo ufw status <span class="comment">#查看</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckhabum1u000b578p1dbde88v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckhadsnyn000bxg8p7m2uddla" class="article-share-link">Share</a>
       
       
     </footer>
