@@ -7,15 +7,15 @@
   
   <title>mssql | 啵A&amp;博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="创建数据库create database zb_m; 选择数据库use zb_m; 创建表create table student(    id char(10),    name char(10),    sex char(5) check(‘男’,’女’),    check(sex&#x3D;”男” and name notlike ‘ms.%’)); create table people(">
+  <meta name="description" content="创建数据库create database zb_m; 选择数据库use zb_m; 创建表 1234567create table student (	id char(10),	name char(10),	sex char(5) check(&#39;男&#39;,&#39;女&#39;),	check(sex&#x3D;&quot;男&quot; and name notlike &#39;m">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mssql">
 <meta property="og:url" content="http://yoursite.com/2020/11/08/mssql/index.html">
 <meta property="og:site_name" content="啵A&amp;博客">
-<meta property="og:description" content="创建数据库create database zb_m; 选择数据库use zb_m; 创建表create table student(    id char(10),    name char(10),    sex char(5) check(‘男’,’女’),    check(sex&#x3D;”男” and name notlike ‘ms.%’)); create table people(">
+<meta property="og:description" content="创建数据库create database zb_m; 选择数据库use zb_m; 创建表 1234567create table student (	id char(10),	name char(10),	sex char(5) check(&#39;男&#39;,&#39;女&#39;),	check(sex&#x3D;&quot;男&quot; and name notlike &#39;m">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-08T08:54:27.000Z">
-<meta property="article:modified_time" content="2020-11-09T10:06:08.336Z">
+<meta property="article:modified_time" content="2020-11-09T10:21:43.896Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
   
@@ -88,52 +88,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>创建数据库</strong><br>create database zb_m;</p>
-<p><strong>选择数据库</strong><br>use zb_m;</p>
-<p><strong>创建表</strong><br>create table student<br>(<br>    id char(10),<br>    name char(10),<br>    sex char(5) check(‘男’,’女’),<br>    check(sex=”男” and name notlike ‘ms.%’)<br>);</p>
-<p>create table people<br>(<br>    bit_col BIT,          /<em>0, 1 或 NULL</em>/<br>    bigint_col bigint,    /<em>-2^63 至 2^63 -1</em>/</p>
-<pre><code>int_col INT,          /*-2^31 至 2^31 -1*/
+        <p><strong>创建数据库</strong><br><code>create database zb_m;</code></p>
+<p><strong>选择数据库</strong><br><code>use zb_m;</code></p>
+<p><strong>创建表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table student </span><br><span class="line">(</span><br><span class="line">	id char(10),</span><br><span class="line">	name char(10),</span><br><span class="line">	sex char(5) check(&#39;男&#39;,&#39;女&#39;),</span><br><span class="line">	check(sex&#x3D;&quot;男&quot; and name notlike &#39;ms.%&#39;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">create table people</span><br><span class="line">(</span><br><span class="line">	bit_col BIT,          &#x2F;*0, 1 或 NULL*&#x2F;</span><br><span class="line">	bigint_col bigint,    &#x2F;*-2^63 至 2^63 -1*&#x2F;</span><br><span class="line"></span><br><span class="line">	int_col INT,          &#x2F;*-2^31 至 2^31 -1*&#x2F;</span><br><span class="line"></span><br><span class="line">	smallint_col SMALLINT,&#x2F;*-2^15 至 2^15 -1*&#x2F;</span><br><span class="line"></span><br><span class="line">    	tinyint_col tinyint,  &#x2F;*0 至 255*&#x2F;</span><br><span class="line"></span><br><span class="line">	dec_col DEC(4, 2),    &#x2F;*同NUMERIC(p,s)，p是指有效位数(精度范围为1到38)，s是小数位数(刻度范围从0到p)*&#x2F;</span><br><span class="line"></span><br><span class="line">	val1 CHAR(3),         &#x2F;*非Unicode字符串，最多可存储8000个字符，1个字节来存储一个字符*&#x2F;</span><br><span class="line"></span><br><span class="line">	val2 NCHAR(1) NOT NULL,&#x2F;*固定长度的Unicode字符串，最多可存储4000个字符，2个字节来存储一个字符*&#x2F;</span><br><span class="line"></span><br><span class="line">	val3 VARCHAR NOT NULL, &#x2F;*可变长度的非Unicode字符串*&#x2F;</span><br><span class="line"></span><br><span class="line">	val4 NVARCHAR NOT NULL,&#x2F;*可变长度的Unicode字符串数据*&#x2F;</span><br><span class="line"></span><br><span class="line">	created_at DATETIME2,  &#x2F;*日期和时间数据*&#x2F;</span><br><span class="line">	valid_from DATE NOT NULL,&#x2F;*日期数据类型*&#x2F;</span><br><span class="line">	start_at TIME (0) NOT NULL&#x2F;*时间数据类型*&#x2F;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">ALTER TABLE people ALTER COLUMN val3 VARCHAR (10) NOT NULL;</span><br><span class="line">ALTER TABLE people ALTER COLUMN val4 NVARCHAR (10) NOT NULL;</span><br><span class="line"></span><br><span class="line">**将created_at列的默认值设置为当前日期和时间**</span><br><span class="line">ALTER TABLE people ADD CONSTRAINT df_current_time DEFAULT CURRENT_TIMESTAMP FOR created_at;</span><br><span class="line"></span><br><span class="line">insert into people values</span><br><span class="line">(</span><br><span class="line">	1,</span><br><span class="line">	-99,</span><br><span class="line">	99,</span><br><span class="line">	-10,</span><br><span class="line">	254,</span><br><span class="line">	20.01,</span><br><span class="line">	&#39;zb&#39;,</span><br><span class="line">	N&#39;马&#39;,</span><br><span class="line">	&#39;kdfk&#39;,</span><br><span class="line">	N&#39;易百教程网&#39;,</span><br><span class="line">	&#39;2020-06-23 09:36:37&#39;,&#x2F;*GETDATE()函数类似于其他数据库系统(如MySQL)中的NOW()函数*&#x2F;</span><br><span class="line">	&#39;2020-01-01&#39;,</span><br><span class="line">	&#39;10:10:00&#39;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-smallint_col SMALLINT,/*-2^15 至 2^15 -1*/
+<p><strong>插入数据</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into student(id, name,sex) values</span><br><span class="line">	(&#39;123&#39;,&#39;zb_m&#39;,&#39;man&#39;),</span><br><span class="line">	(&#39;456&#39;,&#39;xb&#39;,&#39;man&#39;),</span><br><span class="line">	(&#39;234&#39;,&#39;sb&#39;,&#39;woman&#39;);</span><br></pre></td></tr></table></figure>
 
-    tinyint_col tinyint,  /*0 至 255*/
-
-dec_col DEC(4, 2),    /*同NUMERIC(p,s)，p是指有效位数(精度范围为1到38)，s是小数位数(刻度范围从0到p)*/
-
-val1 CHAR(3),         /*非Unicode字符串，最多可存储8000个字符，1个字节来存储一个字符*/
-
-val2 NCHAR(1) NOT NULL,/*固定长度的Unicode字符串，最多可存储4000个字符，2个字节来存储一个字符*/
-
-val3 VARCHAR NOT NULL, /*可变长度的非Unicode字符串*/
-
-val4 NVARCHAR NOT NULL,/*可变长度的Unicode字符串数据*/
-
-created_at DATETIME2,  /*日期和时间数据*/
-valid_from DATE NOT NULL,/*日期数据类型*/
-start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
-<p>);</p>
-<p>ALTER TABLE people</p>
-<p>ALTER COLUMN val3 VARCHAR (10) NOT NULL;</p>
-<p>ALTER TABLE people<br>ALTER COLUMN val4 NVARCHAR (10) NOT NULL;</p>
-<p><strong>将created_at列的默认值设置为当前日期和时间</strong><br>ALTER TABLE people<br>ADD CONSTRAINT df_current_time<br>DEFAULT CURRENT_TIMESTAMP FOR created_at;</p>
-<p>insert into people values<br>(<br>    1,<br>    -99,<br>    99,<br>    -10,<br>    254,<br>    20.01,<br>    ‘zb’,<br>    N’马’,<br>    ‘kdfk’,<br>    N’易百教程网’,<br>    ‘2020-06-23 09:36:37’,/<em>GETDATE()函数类似于其他数据库系统(如MySQL)中的NOW()函数</em>/<br>    ‘2020-01-01’,<br>    ‘10:10:00’<br>);</p>
-<p><strong>插入数据</strong><br>insert into student(id, name,sex) values<br>(‘123’,’zb_m’,’man’),<br>(‘456’,’xb’,’man’),<br>(‘234’,’sb’,’woman’);</p>
-<p><strong>查询数据</strong><br>select * from student [limit 0,2];</p>
-<p><strong>条件查询</strong><br>select name from student where id &lt; ‘345’;</p>
-<p><strong>创建标识列</strong><br>identity(10,2);<br><strong>第一条记录标识列的值是：10，第二条记录标识列的值是：12，第三条记录标识列的值为：14，依此类推。</strong></p>
-<p><strong>创建指定列（索引）</strong><br>alter table student add ip char;</p>
-<p><strong>修改列的类型，大小，约束</strong><br>ALTER TABLE student<br>ALTER COLUMN id int;</p>
-<p><strong>删除指定列（索引）</strong><br>alter table student drop column id;</p>
-<p><strong>添加指定列</strong><br>update student set id=123;</p>
-<p><strong>删除指定行（元组）</strong><br>delete from student where id in (234,123);</p>
-<p><strong>清除数据</strong><br>delete from student;<br>TRUNCATE TABLE student;</p>
-<p><strong>重命名表</strong><br>exec sp_rename ‘student’,’people’;</p>
-<p><strong>删除表</strong><br>drop table *;</p>
+<p><strong>查询数据</strong><br><code>select * from student [limit 0,2];</code></p>
+<p><strong>条件查询</strong><br><code>select name from student where id &lt; &#39;345&#39;;</code></p>
+<p><strong>创建标识列</strong><br><code>identity(10,2);/*第一条记录标识列的值是：10，第二条记录标识列的值是：12，第三条记录标识列的值为：14，依此类推。*/</code></p>
+<p><strong>创建指定列（索引）</strong><br><code>alter table student add ip char;</code></p>
+<p><strong>修改列的类型，大小，约束</strong><br><code>ALTER TABLE student ALTER COLUMN id int;</code></p>
+<p><strong>删除指定列（索引）</strong><br><code>alter table student drop column id;</code></p>
+<p><strong>添加指定列</strong><br><code>update student set id=123;</code></p>
+<p><strong>删除指定行（元组）</strong><br><code>delete from student where id in (234,123);</code></p>
+<p><strong>清除数据</strong><br><code>delete from student;</code><br><code>TRUNCATE TABLE student;</code></p>
+<p><strong>重命名表</strong><br><code>exec sp_rename &#39;student&#39;,&#39;people&#39;;</code></p>
+<p><strong>删除表</strong><br><code>drop table *;</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhadsny50008xg8p00prb3ga" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhaee98u00087i8pcqx9c49b" class="article-share-link">Share</a>
       
       
     </footer>

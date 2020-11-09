@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/halo-blog/" data-id="ckhadsnx80002xg8p4pqj5wbe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/halo-blog/" data-id="ckhaee98100027i8p966t0s0w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/build-mongodb/" data-id="ckhadsnw50000xg8p78o9045a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/build-mongodb/" data-id="ckhaee97500007i8p0gpi4w42" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,14 +229,14 @@
 <p>3.安装hexo<br>    cnpm install -g hexo-cli #hexo -v<br>    npm ERR! Error: EACCES: permission denied, access ‘/usr/local/lib/node_modules问题<br>       1.sudo chmod 775 /usr/local/lib/node_modules<br>       2.sudo chown -R $USER /usr/local/lib/node_modules #推荐，改变目录拥有者<br>    apt –purge remove hexo #卸载hexo</p>
 <p>4.初始化hexo<br>    hexo init myblog<br>    cd myblog //进入这个myblog文件夹<br>    cnpm install</p>
 <p>5.0<br>    注册coding，gitee，github等用户</p>
-<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#46;&#99;&#111;&#x64;&#x69;&#x6e;&#x67;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#46;&#99;&#111;&#x64;&#x69;&#x6e;&#x67;&#x2e;&#x63;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
-<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#x31;&#50;&#x33;&#x34;&#53;&#x40;&#113;&#113;&#46;&#x63;&#111;&#x6d;">&#x31;&#50;&#x33;&#x34;&#53;&#x40;&#113;&#113;&#46;&#x63;&#111;&#x6d;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
+<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#46;&#x63;&#x6f;&#100;&#105;&#x6e;&#103;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#46;&#x63;&#x6f;&#100;&#105;&#x6e;&#103;&#46;&#99;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
+<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#49;&#50;&#x33;&#x34;&#53;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;">&#49;&#50;&#x33;&#x34;&#53;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
 <p>6.发布文章<br>    hexo n “我的第一篇文章” #创建<br>    vim /home/../soure/_posts/我的第一篇文章.md #编辑<br>    cd /home/../myblog<br>    hexo clean  清理<br>    hexo g      生成<br>    hexo d      部署<br>    hexo s      启动</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/hexo-blog/" data-id="ckhadsnxq0005xg8pfzo2apzj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/hexo-blog/" data-id="ckhaee98c00047i8p0j976eox" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/hello-world/" data-id="ckhadsnxf0003xg8p24s35i4g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/hello-world/" data-id="ckhaee98600037i8peu8na2y3" class="article-share-link">Share</a>
       
       
     </footer>
