@@ -133,7 +133,169 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckha9t74k0008xg8p89g0hz02" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhaaifk700089l8pe9gf83yc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/08/redis/" class="article-date">
+  <time datetime="2020-11-08T08:54:08.000Z" itemprop="datePublished">2020-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/08/redis/">redis</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>启动Redis</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server [--port 6379]</span><br></pre></td></tr></table></figure>
+<p>连接Redis</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli [-h host -p port -a passwd db n] [--raw]</span><br></pre></td></tr></table></figure>
+<p>停止Redis</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli shutdown</span><br></pre></td></tr></table></figure>
+<p>测试连通性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping</span><br></pre></td></tr></table></figure>
+<p>选择数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 0-15</span><br></pre></td></tr></table></figure>
+<p>查看键</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
+<p>键总数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dbsize</span><br></pre></td></tr></table></figure>
+<p>键是否存在</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists key1 key2 ... </span><br></pre></td></tr></table></figure>
+<p>随机返回一个键</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">randomkey</span><br></pre></td></tr></table></figure>
+<p>删除键</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del keyname</span><br></pre></td></tr></table></figure>
+<p>修改键名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rename k n_k</span><br><span class="line">renamenx k n_k(n_k不存在时)</span><br></pre></td></tr></table></figure>
+<p>移动键到数据库n</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">move keyname n</span><br></pre></td></tr></table></figure>
+<p>查询键的生命周期（-1永久）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ttl kn</span><br></pre></td></tr></table></figure>
+<p>设置过期时间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">秒语法：expire kn 10</span><br><span class="line">毫秒语法：pexpire kn 10000</span><br><span class="line">永久语法：persist kn</span><br></pre></td></tr></table></figure>
+<p>获取值类型</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> keyname</span><br></pre></td></tr></table></figure>
+<p>###################################<br>string</p>
+<p>设置[多]键值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[m]<span class="built_in">set</span> k v [EX seconds] [PX millisexonds] [NX|XX]</span><br><span class="line">setnx k v</span><br></pre></td></tr></table></figure>
+<p>获取[多]值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[m]get k</span><br></pre></td></tr></table></figure>
+<p>获取值部分字符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getrange k start end</span><br></pre></td></tr></table></figure>
+<p>值追加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">append k string</span><br></pre></td></tr></table></figure>
+<p>值长度</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strlen k</span><br></pre></td></tr></table></figure>
+<p>值递增n[浮点型]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incrby[<span class="built_in">float</span>] k n</span><br></pre></td></tr></table></figure>
+<p>值递减n</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decrby k n</span><br></pre></td></tr></table></figure>
+<p>删除键值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del k</span><br></pre></td></tr></table></figure>
+<p>序列化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dump k</span><br></pre></td></tr></table></figure>
+<p>######################################<br>hash</p>
+<p>设置键(h_k)值(kn vn)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hmset h_k k1 v1 k2 v2 ...</span><br><span class="line">hsetnx h_k k v 不存在k时放入</span><br></pre></td></tr></table></figure>
+<p>获取字段值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hgetall h_k</span><br><span class="line">hmget h_k k1 k2 ...</span><br><span class="line">hget h_k kx</span><br></pre></td></tr></table></figure>
+<p>字段k是否存在</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexists h_k k</span><br></pre></td></tr></table></figure>
+<p>查看字段数目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hlen h_k</span><br></pre></td></tr></table></figure>
+<p>查看所有字段</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hkeys h_k</span><br></pre></td></tr></table></figure>
+<p>查看所有值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hvals h_k</span><br></pre></td></tr></table></figure>
+<p>值运算</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hincrby h_k kx n(10/-1)</span><br></pre></td></tr></table></figure>
+<p>删除键值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hdel h_k kx</span><br><span class="line">del h_k</span><br></pre></td></tr></table></figure>
+<p>########################################<br>list</p>
+<p>创建键(l_k)值(vn(可重复))</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r/lpush l_k v1 v2 v2 ...</span><br></pre></td></tr></table></figure>
+<p>位置n插入v（默认0）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l/rset l_k index(n) v</span><br></pre></td></tr></table></figure>
+<p>查看元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">遍历：lrange l_k start(0) stop(-1)</span><br><span class="line">索引：lindex l_k index(n)</span><br></pre></td></tr></table></figure>
+<p>元素数目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llen l_k</span><br></pre></td></tr></table></figure>
+<p>弹出元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l/rpop l_k</span><br></pre></td></tr></table></figure>
+<p>删除n(+n向右，-n向左，0全部)个v元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem l_k n v</span><br></pre></td></tr></table></figure>
+<p>保留范围内(m至n)的元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrim l_k start(m) stop(n)</span><br></pre></td></tr></table></figure>
+<p>########################################<br>set</p>
+<p>创建键(s_k)值(vn)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
+<p>查看所有元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smembers s_k</span><br></pre></td></tr></table></figure>
+<p>随机返回n个元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srandmember s_k n</span><br></pre></td></tr></table></figure>
+<p>查看是否存在元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sismember s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
+<p>查看元素个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scard s_k</span><br></pre></td></tr></table></figure>
+<p>差集运算</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidff s_km s_kn</span><br><span class="line">sidffstore s_kd s_km s_kn(结果放入s_kd)</span><br></pre></td></tr></table></figure>
+<p>交集运算</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sinter s_km s_kn ...</span><br><span class="line">sinterstore s_kd s_km s_kn ...(结果放入s_kd)</span><br></pre></td></tr></table></figure>
+<p>并集运算</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sunion s_km s_kn ...</span><br><span class="line">sunionstore s_kd s_km s_kn ...(结果放入s_kd)</span><br></pre></td></tr></table></figure>
+<p>删除元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srem s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
+<p>弹出n个元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spop s_k n</span><br></pre></td></tr></table></figure>
+<p>移动元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smove v s_k1 s_k2 </span><br></pre></td></tr></table></figure>
+<p>删除s_k</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del s_k</span><br></pre></td></tr></table></figure>
+<p>########################################<br>zset(按score_double排序)</p>
+<p>创建键(zs_k)值(score_double(可重复) vn)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd zs_k 456 v1 478 v2 478 v3</span><br></pre></td></tr></table></figure>
+<p>遍历元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrange zs_k strat(0) stop(-1) [withscores]</span><br></pre></td></tr></table></figure>
+<p>返回min-max分段的第m位后n个元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrangebyscore zs_k min(0) max(-1) [withscore] <span class="built_in">limit</span> m n</span><br></pre></td></tr></table></figure>
+<p>元素个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zcard zs_k</span><br></pre></td></tr></table></figure>
+<p>查看min-max的元素个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zcount zs_k min(-inf) max(+inf)</span><br></pre></td></tr></table></figure>
+<p>查看kx的sd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zscore zs_k kx</span><br></pre></td></tr></table></figure>
+<p>改vx的sd+/-300</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zincrby zs_k +/-300 vx</span><br></pre></td></tr></table></figure>
+<p>元素排名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrank zs_k v</span><br></pre></td></tr></table></figure>
+<p>删除元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定：zrem zs_k km [kn ..]</span><br><span class="line">范围：zremrangebyscore zs_k min max</span><br></pre></td></tr></table></figure>
+<p>###############################</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import redis as rd</span><br><span class="line"></span><br><span class="line">client = rd.Redis(host=<span class="string">&#x27;localhost&#x27;</span>, port = 6379, db = 0)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(client.keys())</span><br><span class="line">client.set(<span class="string">&#x27;book5&#x27;</span>,<span class="string">&#x27;redis&#x27;</span>)</span><br><span class="line">client.append(<span class="string">&#x27;book5&#x27;</span>, <span class="string">&#x27;-client&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.get(<span class="string">&#x27;book5&#x27;</span>).decode())</span><br><span class="line">client.lpush(<span class="string">&#x27;zb&#x27;</span>, 18, <span class="string">&#x27;cs&#x27;</span>, <span class="string">&#x27;play&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.lrange(<span class="string">&#x27;zb&#x27;</span>, 0, 2))</span><br><span class="line">client.sadd(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;zb&#x27;</span>, <span class="string">&#x27;sx&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.smembers(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"></span><br><span class="line">all_info = client.keys</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> all_info():</span><br><span class="line">    <span class="built_in">print</span>(key.decode())</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhaaifkb00099l8p7ppk91tv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +344,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mongodb/" data-id="ckha9t74a0007xg8p5nygfaqi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mongodb/" data-id="ckhaaifjz00079l8p2a2k7w34" class="article-share-link">Share</a>
       
       
     </footer>
@@ -244,7 +406,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/cpp/" data-id="ckha9t77b000cxg8p2mt0es8p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/cpp/" data-id="ckhaaifnn000d9l8p34qg7oft" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +444,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/python/" data-id="ckha9t74s0009xg8p9uoxeuys" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/python/" data-id="ckhaaifkf000a9l8p0hh1c6j8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -320,7 +482,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/centos/" data-id="ckha9t72g0001xg8pd82p7few" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/centos/" data-id="ckhaaifip00019l8pcl0r5qp2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -367,7 +529,7 @@ systemctl restart mongodb #重启</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckha9t74z000axg8pfe482ivx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckhaaifkj000b9l8p269zcyek" class="article-share-link">Share</a>
       
       
     </footer>
@@ -452,7 +614,7 @@ killall -9 firefox</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/linux/" data-id="ckha9t7410006xg8paual1a5z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/linux/" data-id="ckhaaifjs00069l8pfpm5577x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -602,7 +764,7 @@ killall -9 firefox</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/vim-do/" data-id="ckha9t756000bxg8p6fpidufl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/vim-do/" data-id="ckhaaifkt000c9l8p2juxd2ju" class="article-share-link">Share</a>
       
       
     </footer>
@@ -634,7 +796,7 @@ killall -9 firefox</code></pre>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>可用电脑一台，8G左右u盘一个</strong> <em>(^干净的)</em><br>[^干净的]:没被玷污的！！！</p>
+        <p><strong>可用电脑一台，8G左右u盘一个</strong> (^干净的)<br>[^干净的]:没被玷污的！！！</p>
 <p>*一.操作系统下载<br>官方网站选择不同版本的镜像</p>
 <p>*二.下载启动盘制作工具<br>如UitraISO,banlenaEtcher等</p>
 <p>*三.制作启动盘<br>1.打开UltraISO<br>2.继续试用<br>3.文件-&gt;打开-&gt;选择镜像文件-&gt;打开-&gt;启动-&gt;写入硬盘映象-&gt;写入<br><strong>注意：硬盘驱动器选择u盘</strong></p>
@@ -648,102 +810,7 @@ killall -9 firefox</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/05/install-os/" data-id="ckha9t73s0005xg8pbfmx5ynr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-halo-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/31/halo-blog/" class="article-date">
-  <time datetime="2020-08-31T14:59:55.000Z" itemprop="datePublished">2020-08-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/31/halo-blog/">基于halo搭建个人博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##Ubuntu20.04上基于halo搭建个人博客</p>
-<p>###更新apt</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
-<p>###安装java环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
-<p>###下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$https</span>://dl.halo.run/config/application-template.yaml</span><br></pre></td></tr></table></figure>
-<p>###下载Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wget</span> https://halo.cary.tech/release/halo-1.3.2.jar</span><br></pre></td></tr></table></figure>
-<p>###运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$java</span> -jar halo-1.3.2.jar</span><br></pre></td></tr></table></figure>
-<p>###下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> curl -o /etc/systemd/system/halo.service --create-dirs https://dl.halo.run/config/halo.service</span><br></pre></td></tr></table></figure>
-<p>###YOUR_JAR_PATH更换为自己halo安装包存放的路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> vim /etc/systemd/system/halo.service</span><br></pre></td></tr></table></figure>
-<p>##centos7上基于halo搭建个人博客<br>###1.更新yum</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum update -y</span><br></pre></td></tr></table></figure>
-<p>###2.安装java环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install java-1.8.0-openjdk -y</span><br><span class="line"><span class="variable">$java</span> -version <span class="comment">#检测</span></span><br></pre></td></tr></table></figure>
-<p>###3.下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$curl</span> -o ~/.halo/application.yaml --create-dirs https://dl.halo.run/config/application-template.yaml</span><br><span class="line"><span class="variable">$vim</span> ~/.halo/application.yaml <span class="comment">#配置</span></span><br></pre></td></tr></table></figure>
-<p>###4.下载Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wget</span> https://halo.cary.tech/release/halo-1.3.2.jar</span><br><span class="line"><span class="variable">$java</span> -jar halo-1.3.2.jar <span class="comment">#运行</span></span><br></pre></td></tr></table></figure>
-<p>###5.下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> curl -o /etc/systemd/system/halo.service --create-dirs https://dl.halo.run/config/halo.service</span><br><span class="line"><span class="variable">$sudo</span> vim /etc/systemd/system/halo.service <span class="comment">#YOUR_JAR_PATH更换为自己halo安装包存放的路径</span></span><br></pre></td></tr></table></figure>
-<p>###6.运行<br>####修改service文件之后需要刷新 Systemd</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl daemon-reload</span><br></pre></td></tr></table></figure>
-<p>####设置Halo自启</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl <span class="built_in">enable</span> halo</span><br></pre></td></tr></table></figure>
-<p>####启动Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo start</span><br></pre></td></tr></table></figure>
-<p>####重启Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo restart</span><br></pre></td></tr></table></figure>
-<p>####停止Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo stop</span><br></pre></td></tr></table></figure>
-<p>####查看Halo运行状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo status</span><br></pre></td></tr></table></figure>
-<p>###7.配置域名访问<br>####添加nginx源：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
-<p>####安装nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install -y nginx</span><br></pre></td></tr></table></figure>
-<p>####启动nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl start nginx.service</span><br></pre></td></tr></table></figure>
-<p>####设置开机自启nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl <span class="built_in">enable</span> nginx.service</span><br></pre></td></tr></table></figure>
-<p>####下载下载 Halo 官方的 Nginx 配置模板：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$curl</span> -o /etc/nginx/conf.d/halo.conf --create-dirs https://dl.halo.run/config/nginx.conf</span><br></pre></td></tr></table></figure>
-<p>####配置模板：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$vim</span> /etc/nginx/conf.d/halo.conf<span class="comment">#example.com与www.example.com需要修改为自己的域名</span></span><br></pre></td></tr></table></figure>
-<p>####检查配置是否有误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> nginx -t</span><br></pre></td></tr></table></figure>
-<p>####重载配置信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> nginx -s reload</span><br></pre></td></tr></table></figure>
-<p>####配置 SSL 证书<br>#####安装 certbot 以及 certbot nginx 插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install certbot python2-certbot-nginx -y</span><br></pre></td></tr></table></figure>
-<p>#####执行配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> certbot --nginx</span><br></pre></td></tr></table></figure>
-<p>#####自动续约<br>$sudo certbot renew –dry-run</p>
-<pre><code>####详情请到官方手册 https://halo.run/archives/install-quick-start.html</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/halo-blog/" data-id="ckha9t72s0002xg8pcra06gmb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/05/install-os/" data-id="ckhaaifjk00059l8p4w6lh2m1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -793,6 +860,10 @@ killall -9 firefox</code></pre>
           </li>
         
           <li>
+            <a href="/2020/11/08/redis/">redis</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/08/mongodb/">mongodb</a>
           </li>
         
@@ -802,10 +873,6 @@ killall -9 firefox</code></pre>
         
           <li>
             <a href="/2020/11/08/python/">python</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/08/centos/">centos</a>
           </li>
         
       </ul>
