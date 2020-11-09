@@ -133,7 +133,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhaaifk700089l8pe9gf83yc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhabeimh0008xv8p1aqf40gu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -195,7 +195,8 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">秒语法：expire kn 10</span><br><span class="line">毫秒语法：pexpire kn 10000</span><br><span class="line">永久语法：persist kn</span><br></pre></td></tr></table></figure>
 <p>获取值类型</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> keyname</span><br></pre></td></tr></table></figure>
-<p>###################################<br>string</p>
+<hr>
+<p>###string</p>
 <p>设置[多]键值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[m]<span class="built_in">set</span> k v [EX seconds] [PX millisexonds] [NX|XX]</span><br><span class="line">setnx k v</span><br></pre></td></tr></table></figure>
 <p>获取[多]值</p>
@@ -214,7 +215,8 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del k</span><br></pre></td></tr></table></figure>
 <p>序列化</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dump k</span><br></pre></td></tr></table></figure>
-<p>######################################<br>hash</p>
+<hr>
+<p>###hash</p>
 <p>设置键(h_k)值(kn vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hmset h_k k1 v1 k2 v2 ...</span><br><span class="line">hsetnx h_k k v 不存在k时放入</span><br></pre></td></tr></table></figure>
 <p>获取字段值</p>
@@ -231,7 +233,8 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hincrby h_k kx n(10/-1)</span><br></pre></td></tr></table></figure>
 <p>删除键值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hdel h_k kx</span><br><span class="line">del h_k</span><br></pre></td></tr></table></figure>
-<p>########################################<br>list</p>
+<hr>
+<p>###list</p>
 <p>创建键(l_k)值(vn(可重复))</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r/lpush l_k v1 v2 v2 ...</span><br></pre></td></tr></table></figure>
 <p>位置n插入v（默认0）</p>
@@ -246,7 +249,8 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem l_k n v</span><br></pre></td></tr></table></figure>
 <p>保留范围内(m至n)的元素</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrim l_k start(m) stop(n)</span><br></pre></td></tr></table></figure>
-<p>########################################<br>set</p>
+<hr>
+<p>###set</p>
 <p>创建键(s_k)值(vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
 <p>查看所有元素</p>
@@ -271,7 +275,8 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smove v s_k1 s_k2 </span><br></pre></td></tr></table></figure>
 <p>删除s_k</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del s_k</span><br></pre></td></tr></table></figure>
-<p>########################################<br>zset(按score_double排序)</p>
+<hr>
+<p>###zset(按score_double排序)</p>
 <p>创建键(zs_k)值(score_double(可重复) vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd zs_k 456 v1 478 v2 478 v3</span><br></pre></td></tr></table></figure>
 <p>遍历元素</p>
@@ -290,12 +295,13 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrank zs_k v</span><br></pre></td></tr></table></figure>
 <p>删除元素</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定：zrem zs_k km [kn ..]</span><br><span class="line">范围：zremrangebyscore zs_k min max</span><br></pre></td></tr></table></figure>
-<p>###############################</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import redis as rd</span><br><span class="line"></span><br><span class="line">client = rd.Redis(host=<span class="string">&#x27;localhost&#x27;</span>, port = 6379, db = 0)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(client.keys())</span><br><span class="line">client.set(<span class="string">&#x27;book5&#x27;</span>,<span class="string">&#x27;redis&#x27;</span>)</span><br><span class="line">client.append(<span class="string">&#x27;book5&#x27;</span>, <span class="string">&#x27;-client&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.get(<span class="string">&#x27;book5&#x27;</span>).decode())</span><br><span class="line">client.lpush(<span class="string">&#x27;zb&#x27;</span>, 18, <span class="string">&#x27;cs&#x27;</span>, <span class="string">&#x27;play&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.lrange(<span class="string">&#x27;zb&#x27;</span>, 0, 2))</span><br><span class="line">client.sadd(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;zb&#x27;</span>, <span class="string">&#x27;sx&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.smembers(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"></span><br><span class="line">all_info = client.keys</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> all_info():</span><br><span class="line">    <span class="built_in">print</span>(key.decode())</span><br></pre></td></tr></table></figure>
+<hr>
+<p>###python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis <span class="keyword">as</span> rd</span><br><span class="line"></span><br><span class="line">client = rd.Redis(host=<span class="string">&#x27;localhost&#x27;</span>, port = <span class="number">6379</span>, db = <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">print(client.keys())</span><br><span class="line">client.set(<span class="string">&#x27;book5&#x27;</span>,<span class="string">&#x27;redis&#x27;</span>)</span><br><span class="line">client.append(<span class="string">&#x27;book5&#x27;</span>, <span class="string">&#x27;-client&#x27;</span>)</span><br><span class="line">print(client.get(<span class="string">&#x27;book5&#x27;</span>).decode())</span><br><span class="line">client.lpush(<span class="string">&#x27;zb&#x27;</span>, <span class="number">18</span>, <span class="string">&#x27;cs&#x27;</span>, <span class="string">&#x27;play&#x27;</span>)</span><br><span class="line">print(client.lrange(<span class="string">&#x27;zb&#x27;</span>, <span class="number">0</span>, <span class="number">2</span>))</span><br><span class="line">client.sadd(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;zb&#x27;</span>, <span class="string">&#x27;sx&#x27;</span>)</span><br><span class="line">print(client.smembers(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"></span><br><span class="line">all_info = client.keys</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> all_info():</span><br><span class="line">    print(key.decode())</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhaaifkb00099l8p7ppk91tv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhabeimr000axv8phmj03ppq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -344,7 +350,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mongodb/" data-id="ckhaaifjz00079l8p2a2k7w34" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mongodb/" data-id="ckhabeimb0007xv8p3vc06yzl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +412,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/cpp/" data-id="ckhaaifnn000d9l8p34qg7oft" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/cpp/" data-id="ckhabeiod000dxv8p1fofgxs1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -444,7 +450,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/python/" data-id="ckhaaifkf000a9l8p0hh1c6j8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/python/" data-id="ckhabeiml0009xv8pcg7cc758" class="article-share-link">Share</a>
       
       
     </footer>
@@ -482,7 +488,7 @@ start_at TIME (0) NOT NULL/*时间数据类型*/</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/centos/" data-id="ckhaaifip00019l8pcl0r5qp2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/centos/" data-id="ckhabeilb0001xv8p6bhc4927" class="article-share-link">Share</a>
       
       
     </footer>
@@ -529,7 +535,7 @@ systemctl restart mongodb #重启</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckhaaifkj000b9l8p269zcyek" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckhabeimv000bxv8p78442r87" class="article-share-link">Share</a>
       
       
     </footer>
@@ -562,11 +568,11 @@ systemctl restart mongodb #重启</code></pre>
     <div class="article-entry" itemprop="articleBody">
       
         <p>Linux的发行版大体分两大类，商业公司维护的发行版Redhat(RHEL)为代表，社区组织维护的发行版Debian<br>Redhat系列的包管理方式采用的是基于RPM包的YUM包管理方式<br>Debian系列是apt-get/dpkg包管理方式</p>
-<p>1.你重置过你的服务器后，Host key verification failed.解决<br>    linux ssh-keygen -R 你要访问的IP地址<br>    win 删除~/.ssh/known_hosts内IP记录</p>
-<p>2.Package has no installation candidate的问题<br>    sudo yum/apt-get update</p>
-<p>3.xxx is not in the sudoers file.This incident will be reported.的解决方法<br>    su root<br>    chmod u+w /etc/sudoers<br>    vi /etc/sudoers<br>    复制 root ALL(ALL:ALL) ALL<br>    粘贴 root改为xxx</p>
-<p>4.用户<br>    创建用户<br>    adduser xxx<br>    sudo useradd -d /home/uftp -s /bin/bash xxx  #/etc/group记录<br>    sudo passwd xxx   #/etc/shadow记录<br>     UID：/etc/passwd<br>        0 系统管理员(统管理员不见得只有root喔)<br>             1<del>499 系统账号(100</del>499 若用户有系统账号需求时，可以使用)<br>             后为  普通账号<br>     Shell：通常/bin/bash；/sbin/nologin，用来制作纯pop邮件账号者的数据</p>
-<p>5.文件<br>    权限<br>    基本权限: rwxrwxrwx, 421421421<br>    chgrp<br>    chown [-R] user:grap<br>    chmod [-R] 777 :</p>
+<p>1、你重置过你的服务器后，Host key verification failed.解决<br>    linux ssh-keygen -R 你要访问的IP地址<br>    win 删除~/.ssh/known_hosts内IP记录</p>
+<p>2、Package has no installation candidate的问题<br>    sudo yum/apt-get update</p>
+<p>3、xxx is not in the sudoers file.This incident will be reported.的解决方法<br>    su root<br>    chmod u+w /etc/sudoers<br>    vi /etc/sudoers<br>    复制 root ALL(ALL:ALL) ALL<br>    粘贴 root改为xxx</p>
+<p>4、用户<br>    创建用户<br>    adduser xxx<br>    sudo useradd -d /home/uftp -s /bin/bash xxx  #/etc/group记录<br>    sudo passwd xxx   #/etc/shadow记录<br>     UID：/etc/passwd<br>        0 系统管理员(统管理员不见得只有root喔)<br>             1<del>499 系统账号(100</del>499 若用户有系统账号需求时，可以使用)<br>             后为  普通账号<br>     Shell：通常/bin/bash；/sbin/nologin，用来制作纯pop邮件账号者的数据</p>
+<p>5、文件<br>    权限<br>    基本权限: rwxrwxrwx, 421421421<br>    chgrp<br>    chown [-R] user:grap<br>    chmod [-R] 777 :</p>
 <pre><code>隐藏属性: a,i
 chattr [+-=][ASacdistu]:设定
 a: 档案将只能增加数据，而不能删除也不能修改数据，只有root可设定
@@ -603,9 +609,9 @@ whereis [bmsu] f_m
 locate [-ir] keyword
 find [PATH] [option] [action]
 链接</code></pre>
-<p>6.磁盘<br>    查看<br>    分割<br>    格式化<br>    检验<br>    挂载<br>    卸载</p>
-<p>7.下载安装<br>    wget URL<br>    curl URL<br>    sudo bash filename</p>
-<p>8.进程管理<br>    ps查看进程<br>    ps -ef<br>    ps -aux<br>    杀死进程（kill）的N种方法<br>    ps -ef | grep firefox<br>    pidof firefox-bin<br>    kill -s pid</p>
+<p>6、磁盘<br>    查看<br>    分割<br>    格式化<br>    检验<br>    挂载<br>    卸载</p>
+<p>7、下载安装<br>    wget URL<br>    curl URL<br>    sudo bash filename</p>
+<p>8、进程管理<br>    ps查看进程<br>    ps -ef<br>    ps -aux<br>    杀死进程（kill）的N种方法<br>    ps -ef | grep firefox<br>    pidof firefox-bin<br>    kill -s pid</p>
 <pre><code>ps -ef | grep firefox | grep -v grep | cut -c 9-15 | xargs kill -s 9
 pgrep firefox | xargs kill -s 9
 pkill -9 firefox
@@ -614,7 +620,7 @@ killall -9 firefox</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/linux/" data-id="ckhaaifjs00069l8pfpm5577x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/linux/" data-id="ckhabeim70006xv8p7tbtcvxq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -764,7 +770,7 @@ killall -9 firefox</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/vim-do/" data-id="ckhaaifkt000c9l8p2juxd2ju" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/vim-do/" data-id="ckhabein2000cxv8pamci3l9t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -796,21 +802,20 @@ killall -9 firefox</code></pre>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>可用电脑一台，8G左右u盘一个</strong> (^干净的)<br>[^干净的]:没被玷污的！！！</p>
-<p>*一.操作系统下载<br>官方网站选择不同版本的镜像</p>
-<p>*二.下载启动盘制作工具<br>如UitraISO,banlenaEtcher等</p>
-<p>*三.制作启动盘<br>1.打开UltraISO<br>2.继续试用<br>3.文件-&gt;打开-&gt;选择镜像文件-&gt;打开-&gt;启动-&gt;写入硬盘映象-&gt;写入<br><strong>注意：硬盘驱动器选择u盘</strong></p>
-<p>*四.安装操作系统<br>1.插上u盘<br>2.进入BIOS（不同电脑不一样，自己百度，华硕主板F2）<br>3.选择启动项，把u盘拖到第一个<br>4.保存退出（F7）<br>5.接下来就是鼠标操作，识字就行</p>
+        <p><strong>可用电脑一台，8G左右u盘一个</strong> <em>(^干净的)</em>[^干净的]:没被玷污的！！！</p>
+<p>###一.操作系统下载<br>官方网站选择不同版本的镜像</p>
+<p>###二.下载启动盘制作工具<br>如UitraISO,banlenaEtcher等</p>
+<p>###三.制作启动盘<br>1.打开UltraISO<br>2.继续试用<br>3.文件-&gt;打开-&gt;选择镜像文件-&gt;打开-&gt;启动-&gt;写入硬盘映象-&gt;写入<br><strong>注意：硬盘驱动器选择u盘</strong></p>
+<p>###四.安装操作系统<br>1.插上u盘<br>2.进入BIOS（不同电脑不一样，自己百度，华硕主板F2）<br>3.选择启动项，把u盘拖到第一个<br>4.保存退出（F7）<br>5.接下来就是鼠标操作，识字就行</p>
 <p><strong><em>小白到此结束（操作系统自动安装驱动程序）!!!</em></strong></p>
-<p>*五.手动安装驱动程序</p>
-<p>1主板的驱动程序<br>华硕：<a target="_blank" rel="noopener" href="https://www.asus.com.cn/support/Download-Center/">https://www.asus.com.cn/support/Download-Center/</a></p>
+<p>###五.手动安装驱动程序<br>1主板的驱动程序<br>华硕：<a target="_blank" rel="noopener" href="https://www.asus.com.cn/support/Download-Center/">https://www.asus.com.cn/support/Download-Center/</a></p>
 <p>2独显的驱动程序<br>N卡：<a target="_blank" rel="noopener" href="https://www.nvidia.cn/Download/index.aspx?lang=cn">https://www.nvidia.cn/Download/index.aspx?lang=cn</a><br>A卡：<a target="_blank" rel="noopener" href="https://www.amd.com/zh-hans/support">https://www.amd.com/zh-hans/support</a></p>
 <p>3其他设备驱动程序<br>自己查找</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/05/install-os/" data-id="ckhaaifjk00059l8p4w6lh2m1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/05/install-os/" data-id="ckhabeim20005xv8p70u8fu33" class="article-share-link">Share</a>
       
       
     </footer>

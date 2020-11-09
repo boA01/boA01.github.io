@@ -15,7 +15,7 @@
 <meta property="og:description" content="启动Redis 1redis-server [--port 6379] 连接Redis 1redis-cli [-h host -p port -a passwd db n] [--raw] 停止Redis 1redis-cli shutdown 测试连通性 1ping 选择数据库 1select 0-15 查看键 1keys * 键总数 1dbsize 键是否存在 1exists key1 ke">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-08T08:54:08.000Z">
-<meta property="article:modified_time" content="2020-11-09T08:34:36.756Z">
+<meta property="article:modified_time" content="2020-11-09T08:58:58.146Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
   
@@ -118,7 +118,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">秒语法：expire kn 10</span><br><span class="line">毫秒语法：pexpire kn 10000</span><br><span class="line">永久语法：persist kn</span><br></pre></td></tr></table></figure>
 <p>获取值类型</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> keyname</span><br></pre></td></tr></table></figure>
-<p>###################################<br>string</p>
+<hr>
+<p>###string</p>
 <p>设置[多]键值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[m]<span class="built_in">set</span> k v [EX seconds] [PX millisexonds] [NX|XX]</span><br><span class="line">setnx k v</span><br></pre></td></tr></table></figure>
 <p>获取[多]值</p>
@@ -137,7 +138,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del k</span><br></pre></td></tr></table></figure>
 <p>序列化</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dump k</span><br></pre></td></tr></table></figure>
-<p>######################################<br>hash</p>
+<hr>
+<p>###hash</p>
 <p>设置键(h_k)值(kn vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hmset h_k k1 v1 k2 v2 ...</span><br><span class="line">hsetnx h_k k v 不存在k时放入</span><br></pre></td></tr></table></figure>
 <p>获取字段值</p>
@@ -154,7 +156,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hincrby h_k kx n(10/-1)</span><br></pre></td></tr></table></figure>
 <p>删除键值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hdel h_k kx</span><br><span class="line">del h_k</span><br></pre></td></tr></table></figure>
-<p>########################################<br>list</p>
+<hr>
+<p>###list</p>
 <p>创建键(l_k)值(vn(可重复))</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r/lpush l_k v1 v2 v2 ...</span><br></pre></td></tr></table></figure>
 <p>位置n插入v（默认0）</p>
@@ -169,7 +172,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem l_k n v</span><br></pre></td></tr></table></figure>
 <p>保留范围内(m至n)的元素</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrim l_k start(m) stop(n)</span><br></pre></td></tr></table></figure>
-<p>########################################<br>set</p>
+<hr>
+<p>###set</p>
 <p>创建键(s_k)值(vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
 <p>查看所有元素</p>
@@ -194,7 +198,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smove v s_k1 s_k2 </span><br></pre></td></tr></table></figure>
 <p>删除s_k</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del s_k</span><br></pre></td></tr></table></figure>
-<p>########################################<br>zset(按score_double排序)</p>
+<hr>
+<p>###zset(按score_double排序)</p>
 <p>创建键(zs_k)值(score_double(可重复) vn)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd zs_k 456 v1 478 v2 478 v3</span><br></pre></td></tr></table></figure>
 <p>遍历元素</p>
@@ -213,12 +218,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrank zs_k v</span><br></pre></td></tr></table></figure>
 <p>删除元素</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定：zrem zs_k km [kn ..]</span><br><span class="line">范围：zremrangebyscore zs_k min max</span><br></pre></td></tr></table></figure>
-<p>###############################</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import redis as rd</span><br><span class="line"></span><br><span class="line">client = rd.Redis(host=<span class="string">&#x27;localhost&#x27;</span>, port = 6379, db = 0)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(client.keys())</span><br><span class="line">client.set(<span class="string">&#x27;book5&#x27;</span>,<span class="string">&#x27;redis&#x27;</span>)</span><br><span class="line">client.append(<span class="string">&#x27;book5&#x27;</span>, <span class="string">&#x27;-client&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.get(<span class="string">&#x27;book5&#x27;</span>).decode())</span><br><span class="line">client.lpush(<span class="string">&#x27;zb&#x27;</span>, 18, <span class="string">&#x27;cs&#x27;</span>, <span class="string">&#x27;play&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.lrange(<span class="string">&#x27;zb&#x27;</span>, 0, 2))</span><br><span class="line">client.sadd(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;zb&#x27;</span>, <span class="string">&#x27;sx&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(client.smembers(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"></span><br><span class="line">all_info = client.keys</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> all_info():</span><br><span class="line">    <span class="built_in">print</span>(key.decode())</span><br></pre></td></tr></table></figure>
+<hr>
+<p>###python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis <span class="keyword">as</span> rd</span><br><span class="line"></span><br><span class="line">client = rd.Redis(host=<span class="string">&#x27;localhost&#x27;</span>, port = <span class="number">6379</span>, db = <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">print(client.keys())</span><br><span class="line">client.set(<span class="string">&#x27;book5&#x27;</span>,<span class="string">&#x27;redis&#x27;</span>)</span><br><span class="line">client.append(<span class="string">&#x27;book5&#x27;</span>, <span class="string">&#x27;-client&#x27;</span>)</span><br><span class="line">print(client.get(<span class="string">&#x27;book5&#x27;</span>).decode())</span><br><span class="line">client.lpush(<span class="string">&#x27;zb&#x27;</span>, <span class="number">18</span>, <span class="string">&#x27;cs&#x27;</span>, <span class="string">&#x27;play&#x27;</span>)</span><br><span class="line">print(client.lrange(<span class="string">&#x27;zb&#x27;</span>, <span class="number">0</span>, <span class="number">2</span>))</span><br><span class="line">client.sadd(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;zb&#x27;</span>, <span class="string">&#x27;sx&#x27;</span>)</span><br><span class="line">print(client.smembers(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"></span><br><span class="line">all_info = client.keys</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> all_info():</span><br><span class="line">    print(key.decode())</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhaaifkb00099l8p7ppk91tv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhabeimr000axv8phmj03ppq" class="article-share-link">Share</a>
       
       
     </footer>
