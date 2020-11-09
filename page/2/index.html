@@ -66,101 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-halo-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/31/halo-blog/" class="article-date">
-  <time datetime="2020-08-31T14:59:55.000Z" itemprop="datePublished">2020-08-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/31/halo-blog/">基于halo搭建个人博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##Ubuntu20.04上基于halo搭建个人博客</p>
-<p>###更新apt</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get update</span><br></pre></td></tr></table></figure>
-<p>###安装java环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
-<p>###下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$https</span>://dl.halo.run/config/application-template.yaml</span><br></pre></td></tr></table></figure>
-<p>###下载Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wget</span> https://halo.cary.tech/release/halo-1.3.2.jar</span><br></pre></td></tr></table></figure>
-<p>###运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$java</span> -jar halo-1.3.2.jar</span><br></pre></td></tr></table></figure>
-<p>###下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> curl -o /etc/systemd/system/halo.service --create-dirs https://dl.halo.run/config/halo.service</span><br></pre></td></tr></table></figure>
-<p>###YOUR_JAR_PATH更换为自己halo安装包存放的路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> vim /etc/systemd/system/halo.service</span><br></pre></td></tr></table></figure>
-<p>##centos7上基于halo搭建个人博客<br>###1.更新yum</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum update -y</span><br></pre></td></tr></table></figure>
-<p>###2.安装java环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install java-1.8.0-openjdk -y</span><br><span class="line"><span class="variable">$java</span> -version <span class="comment">#检测</span></span><br></pre></td></tr></table></figure>
-<p>###3.下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$curl</span> -o ~/.halo/application.yaml --create-dirs https://dl.halo.run/config/application-template.yaml</span><br><span class="line"><span class="variable">$vim</span> ~/.halo/application.yaml <span class="comment">#配置</span></span><br></pre></td></tr></table></figure>
-<p>###4.下载Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wget</span> https://halo.cary.tech/release/halo-1.3.2.jar</span><br><span class="line"><span class="variable">$java</span> -jar halo-1.3.2.jar <span class="comment">#运行</span></span><br></pre></td></tr></table></figure>
-<p>###5.下载配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> curl -o /etc/systemd/system/halo.service --create-dirs https://dl.halo.run/config/halo.service</span><br><span class="line"><span class="variable">$sudo</span> vim /etc/systemd/system/halo.service <span class="comment">#YOUR_JAR_PATH更换为自己halo安装包存放的路径</span></span><br></pre></td></tr></table></figure>
-<p>###6.运行<br>####修改service文件之后需要刷新 Systemd</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl daemon-reload</span><br></pre></td></tr></table></figure>
-<p>####设置Halo自启</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl <span class="built_in">enable</span> halo</span><br></pre></td></tr></table></figure>
-<p>####启动Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo start</span><br></pre></td></tr></table></figure>
-<p>####重启Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo restart</span><br></pre></td></tr></table></figure>
-<p>####停止Halo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo stop</span><br></pre></td></tr></table></figure>
-<p>####查看Halo运行状态</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> service halo status</span><br></pre></td></tr></table></figure>
-<p>###7.配置域名访问<br>####添加nginx源：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</span><br></pre></td></tr></table></figure>
-<p>####安装nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install -y nginx</span><br></pre></td></tr></table></figure>
-<p>####启动nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl start nginx.service</span><br></pre></td></tr></table></figure>
-<p>####设置开机自启nginx：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> systemctl <span class="built_in">enable</span> nginx.service</span><br></pre></td></tr></table></figure>
-<p>####下载下载 Halo 官方的 Nginx 配置模板：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$curl</span> -o /etc/nginx/conf.d/halo.conf --create-dirs https://dl.halo.run/config/nginx.conf</span><br></pre></td></tr></table></figure>
-<p>####配置模板：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$vim</span> /etc/nginx/conf.d/halo.conf<span class="comment">#example.com与www.example.com需要修改为自己的域名</span></span><br></pre></td></tr></table></figure>
-<p>####检查配置是否有误：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> nginx -t</span><br></pre></td></tr></table></figure>
-<p>####重载配置信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> nginx -s reload</span><br></pre></td></tr></table></figure>
-<p>####配置 SSL 证书<br>#####安装 certbot 以及 certbot nginx 插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> yum install certbot python2-certbot-nginx -y</span><br></pre></td></tr></table></figure>
-<p>#####执行配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> certbot --nginx</span><br></pre></td></tr></table></figure>
-<p>#####自动续约<br>$sudo certbot renew –dry-run</p>
-<pre><code>####详情请到官方手册 https://halo.run/archives/install-quick-start.html</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/halo-blog/" data-id="ckh9e13al0002s78p6k38atno" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-build-mongodb" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/31/build-mongodb/" class="article-date">
@@ -192,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/build-mongodb/" data-id="ckh9e139l0000s78p0r1xh375" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/build-mongodb/" data-id="ckha9t7160000xg8p3hu5676a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,14 +134,14 @@
 <p>3.安装hexo<br>    cnpm install -g hexo-cli #hexo -v<br>    npm ERR! Error: EACCES: permission denied, access ‘/usr/local/lib/node_modules问题<br>       1.sudo chmod 775 /usr/local/lib/node_modules<br>       2.sudo chown -R $USER /usr/local/lib/node_modules #推荐，改变目录拥有者<br>    apt –purge remove hexo #卸载hexo</p>
 <p>4.初始化hexo<br>    hexo init myblog<br>    cd myblog //进入这个myblog文件夹<br>    cnpm install</p>
 <p>5.0<br>    注册coding，gitee，github等用户</p>
-<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x2e;&#99;&#111;&#100;&#x69;&#x6e;&#103;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#116;&#x2e;&#99;&#111;&#100;&#x69;&#x6e;&#103;&#46;&#x63;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
-<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#49;&#x32;&#51;&#x34;&#53;&#64;&#113;&#113;&#46;&#99;&#111;&#109;">&#49;&#x32;&#51;&#x34;&#53;&#64;&#113;&#113;&#46;&#99;&#111;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
+<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x2e;&#x63;&#111;&#x64;&#105;&#110;&#103;&#46;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x2e;&#x63;&#111;&#x64;&#105;&#110;&#103;&#46;&#99;&#111;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
+<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#x31;&#50;&#x33;&#x34;&#53;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#109;">&#x31;&#50;&#x33;&#x34;&#53;&#x40;&#x71;&#113;&#x2e;&#x63;&#111;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
 <p>6.发布文章<br>    hexo n “我的第一篇文章” #创建<br>    vim /home/../soure/_posts/我的第一篇文章.md #编辑<br>    cd /home/../myblog<br>    hexo clean  清理<br>    hexo g      生成<br>    hexo d      部署<br>    hexo s      启动</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/hexo-blog/" data-id="ckh9e13az0004s78p76825fba" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/hexo-blog/" data-id="ckha9t73m0004xg8pduni4j0n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/hello-world/" data-id="ckh9e13as0003s78p7rss57to" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/hello-world/" data-id="ckha9t73d0003xg8ped48d4y3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -335,10 +240,6 @@
           </li>
         
           <li>
-            <a href="/2020/11/08/redis/">redis</a>
-          </li>
-        
-          <li>
             <a href="/2020/11/08/mongodb/">mongodb</a>
           </li>
         
@@ -348,6 +249,10 @@
         
           <li>
             <a href="/2020/11/08/python/">python</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/08/centos/">centos</a>
           </li>
         
       </ul>
