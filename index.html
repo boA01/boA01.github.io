@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhaee98u00087i8pcqx9c49b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mssql/" data-id="ckhaexzc20008gk8pa6v215ju" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhaee997000a7i8p6r6ka3qm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/redis/" data-id="ckhaexzcd000agk8pblev3p79" class="article-share-link">Share</a>
       
       
     </footer>
@@ -424,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/mongodb/" data-id="ckhaee98q00077i8p35ta0hlo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/mongodb/" data-id="ckhaexzbx0007gk8p14o4613c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -486,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/cpp/" data-id="ckhaee9bb000d7i8p8lq8gbir" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/cpp/" data-id="ckhaexzeh000dgk8p9f9l0dn2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -531,7 +531,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/11/08/python/" data-id="ckhaee99000097i8p1s3t8wwg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/11/08/python/" data-id="ckhaexzc80009gk8p1th99a9v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -563,13 +563,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>rpm命令<br>    rpm -q <packagename> 查询指定的包是否安装<br>    rpm -ql <packagename> 查询包生成的所有文件<br>    rpm -qc *.rpm 查询包配置文件<br>    rpm -q –changelog *.rpm 查询包更新信息<br>    rpm -ivh *.rpm 安装<br>    rpm -ivh –force *.rpm 强制安装<br>    rpm -ivh –nodeps –force *.rpm 忽略依赖关系<br>    rpm -ivh –replacepkgs *.rpm 覆盖、替换安装<br>    rpm -e *.rpm 卸载<br>    rpm -e –nodeps *.rpm 忽略依赖关系<br>    rpm -e –noscripts *.rpm 不执行脚本卸载<br>    rpm -Uvh *.rpm 升级<br>      -U和-F选项均可以升级一个包。旧包不存在时，<br>      -U选项会安装新包，而-F选项不安装新包<br>详情 man rpm</p>
-<p>yum命令<br>    yum search <packagename> # 查询软件包<br>    yum install <packagename> # 安装程序包<br>    yum update <packagename> # 升级程序包<br>    yum remove/erase <packagename> # 卸载程序包<br>    yum clean all/<packagename> # 清理 本地/指定 缓存<br>    yum clean plugins#清楚插件缓存<br>    yum list [<packagename>]显示的程序包[支持通配符格式的查询]<br>    yum info <packagename> 查看程序包信息<br>    yum repolist all # 显示所有仓库<br>详情 yum –help</p>
+        <p><strong>rpm命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rpm -q &lt;packagename&gt; 查询指定的包是否安装</span><br><span class="line">rpm -ql &lt;packagename&gt; 查询包生成的所有文件</span><br><span class="line">rpm -qc *.rpm 查询包配置文件</span><br><span class="line">rpm -q --changelog *.rpm 查询包更新信息</span><br><span class="line">rpm -ivh *.rpm 安装</span><br><span class="line">rpm -ivh --force *.rpm 强制安装</span><br><span class="line">rpm -ivh --nodeps --force *.rpm 忽略依赖关系</span><br><span class="line">rpm -ivh --replacepkgs *.rpm 覆盖、替换安装</span><br><span class="line">rpm -e *.rpm 卸载</span><br><span class="line">rpm -e --nodeps *.rpm 忽略依赖关系</span><br><span class="line">rpm -e --noscripts *.rpm 不执行脚本卸载</span><br><span class="line">rpm -Uvh *.rpm 升级</span><br></pre></td></tr></table></figure>
+<p>-U和-F选项均可以升级一个包。旧包不存在时，-U选项会安装新包，而-F选项不安装新包<br><em>详情 man rpm</em></p>
+<p><strong>yum命令</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">yum search &lt;packagename&gt; <span class="comment"># 查询软件包</span></span><br><span class="line">yum install &lt;packagename&gt; <span class="comment"># 安装程序包</span></span><br><span class="line">yum update &lt;packagename&gt; <span class="comment"># 升级程序包</span></span><br><span class="line">yum remove/erase &lt;packagename&gt; <span class="comment"># 卸载程序包</span></span><br><span class="line">yum clean all/&lt;packagename&gt; <span class="comment"># 清理 本地/指定 缓存</span></span><br><span class="line">yum clean plugins <span class="comment">#清楚插件缓存</span></span><br><span class="line">yum list [&lt;packagename&gt;] <span class="comment">#显示的程序包[支持通配符格式的查询]</span></span><br><span class="line">yum info &lt;packagename&gt; <span class="comment">#查看程序包信息</span></span><br><span class="line">yum repolist all <span class="comment">#显示所有仓库</span></span><br></pre></td></tr></table></figure>
+<p><em>详情 yum –help</em></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/centos/" data-id="ckhaee97t00017i8p0h66gns4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/centos/" data-id="ckhaexzau0001gk8p5vma1d46" class="article-share-link">Share</a>
       
       
     </footer>
@@ -634,7 +638,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckhaee99e000b7i8p6lnr2xas" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/ubuntu/" data-id="ckhaexzcj000bgk8pcg2s2szw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -719,7 +723,7 @@ killall -9 firefox</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/linux/" data-id="ckhaee98l00067i8p7z3h9b3z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/linux/" data-id="ckhaexzbs0006gk8pakfn9mhs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -869,7 +873,7 @@ killall -9 firefox</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/08/vim-do/" data-id="ckhaee99n000c7i8p0gnxa8n5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/08/vim-do/" data-id="ckhaexzec000cgk8pcpt8dh5r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -902,19 +906,37 @@ killall -9 firefox</code></pre>
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>可用电脑一台，8G左右u盘一个</strong> [^干净的！！！]</p>
-<p>###一.操作系统下载<br>官方网站选择不同版本的镜像</p>
-<p>###二.下载启动盘制作工具<br>如UitraISO,banlenaEtcher等</p>
-<p>###三.制作启动盘<br>1.打开UltraISO<br>2.继续试用<br>3.文件-&gt;打开-&gt;选择镜像文件-&gt;打开-&gt;启动-&gt;写入硬盘映象-&gt;写入<br><strong>注意：硬盘驱动器选择u盘</strong></p>
-<p>###四.安装操作系统<br>1.插上u盘<br>2.进入BIOS（不同电脑不一样，自己百度，华硕主板F2）<br>3.选择启动项，把u盘拖到第一个<br>4.保存退出（F7）<br>5.接下来就是鼠标操作，识字就行</p>
+<h3>一.操作系统下载</h3>
+官方网站选择不同版本的镜像
+
+<h3>二.下载启动盘制作工具</h3>
+如UitraISO,banlenaEtcher等
+
+<h3>三.制作启动盘</h3>
+1.打开UltraISO
+2.继续试用
+3.文件->打开->选择镜像文件->打开->启动->写入硬盘映象->写入
+**注意：硬盘驱动器选择u盘**
+
+<h3>四.安装操作系统</h3>
+1.插上u盘
+2.进入BIOS（不同电脑不一样，自己百度，华硕主板F2）
+3.选择启动项，把u盘拖到第一个
+4.保存退出（F7）
+5.接下来就是鼠标操作，识字就行
+
 <p><strong><em>小白到此结束（操作系统自动安装驱动程序）!!!</em></strong></p>
-<p>###五.手动安装驱动程序<br>1主板的驱动程序<br>华硕：<a target="_blank" rel="noopener" href="https://www.asus.com.cn/support/Download-Center/">https://www.asus.com.cn/support/Download-Center/</a></p>
+<h3>五.手动安装驱动程序</h3>
+1主板的驱动程序
+华硕：https://www.asus.com.cn/support/Download-Center/
+
 <p>2独显的驱动程序<br>N卡：<a target="_blank" rel="noopener" href="https://www.nvidia.cn/Download/index.aspx?lang=cn">https://www.nvidia.cn/Download/index.aspx?lang=cn</a><br>A卡：<a target="_blank" rel="noopener" href="https://www.amd.com/zh-hans/support">https://www.amd.com/zh-hans/support</a></p>
 <p>3其他设备驱动程序<br>自己查找</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/09/05/install-os/" data-id="ckhaee98g00057i8p0nn24m02" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/09/05/install-os/" data-id="ckhaexzbo0005gk8p55302fve" class="article-share-link">Share</a>
       
       
     </footer>
