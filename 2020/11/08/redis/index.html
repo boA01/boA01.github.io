@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="通用  启动Redis 1redis-server [--port 6379]  连接Redis 1redis-cli [-h host -p port -a passwd db n] [--raw]  停止Redis 1redis-cli shutdown  测试连通性 1ping  选择数据库 1select 0-15  查看键 1keys *  键总数 1dbsize  键是否存在 1exi">
+  <meta name="description" content="通用  启动Redis&#96;redis-server [–port 6379]’ 连接Redisredis-cli [-h host -p port -a passwd db n] [--raw] 停止Redisredis-cli shutdown 测试连通性ping 选择数据库select 0-15 查看键keys * 键总数dbsize 键是否存在exists key1 key2 ... 随机返回">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis">
 <meta property="og:url" content="http://yoursite.com/2020/11/08/redis/index.html">
 <meta property="og:site_name" content="啵A&amp;博客">
-<meta property="og:description" content="通用  启动Redis 1redis-server [--port 6379]  连接Redis 1redis-cli [-h host -p port -a passwd db n] [--raw]  停止Redis 1redis-cli shutdown  测试连通性 1ping  选择数据库 1select 0-15  查看键 1keys *  键总数 1dbsize  键是否存在 1exi">
+<meta property="og:description" content="通用  启动Redis&#96;redis-server [–port 6379]’ 连接Redisredis-cli [-h host -p port -a passwd db n] [--raw] 停止Redisredis-cli shutdown 测试连通性ping 选择数据库select 0-15 查看键keys * 键总数dbsize 键是否存在exists key1 key2 ... 随机返回">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-08T08:54:08.000Z">
-<meta property="article:modified_time" content="2020-11-09T10:06:27.696Z">
+<meta property="article:modified_time" content="2020-11-16T08:33:03.313Z">
 <meta property="article:author" content="啵A">
 <meta name="twitter:card" content="summary">
 
@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-09 18:06:27" itemprop="dateModified" datetime="2020-11-09T18:06:27+08:00">2020-11-09</time>
+                <time title="修改时间：2020-11-16 16:33:03" itemprop="dateModified" datetime="2020-11-16T16:33:03+08:00">2020-11-16</time>
               </span>
 
           
@@ -243,7 +243,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -264,205 +264,90 @@
       
         <h3>通用</h3>
 
-<p><strong>启动Redis</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server [--port 6379]</span><br></pre></td></tr></table></figure>
-
-<p><strong>连接Redis</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli [-h host -p port -a passwd db n] [--raw]</span><br></pre></td></tr></table></figure>
-
-<p><strong>停止Redis</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli shutdown</span><br></pre></td></tr></table></figure>
-
-<p><strong>测试连通性</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping</span><br></pre></td></tr></table></figure>
-
-<p><strong>选择数据库</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 0-15</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看键</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keys *</span><br></pre></td></tr></table></figure>
-
-<p><strong>键总数</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dbsize</span><br></pre></td></tr></table></figure>
-
-<p><strong>键是否存在</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists key1 key2 ... </span><br></pre></td></tr></table></figure>
-
-<p><strong>随机返回一个键</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">randomkey</span><br></pre></td></tr></table></figure>
-
-<p><strong>删除键</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del keyname</span><br></pre></td></tr></table></figure>
-
-<p><strong>修改键名</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rename k n_k</span><br><span class="line">renamenx k n_k(n_k不存在时)</span><br></pre></td></tr></table></figure>
-
-<p><strong>移动键到数据库n</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">move keyname n</span><br></pre></td></tr></table></figure>
-
-<p><strong>查询键的生命周期(-1永久)</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ttl kn</span><br></pre></td></tr></table></figure>
-
+<p><strong>启动Redis</strong><br>`redis-server [–port 6379]’</p>
+<p><strong>连接Redis</strong><br><code>redis-cli [-h host -p port -a passwd db n] [--raw]</code></p>
+<p><strong>停止Redis</strong><br><code>redis-cli shutdown</code></p>
+<p><strong>测试连通性</strong><br><code>ping</code></p>
+<p><strong>选择数据库</strong><br><code>select 0-15</code></p>
+<p><strong>查看键</strong><br><code>keys *</code></p>
+<p><strong>键总数</strong><br><code>dbsize</code></p>
+<p><strong>键是否存在</strong><br><code>exists key1 key2 ...</code></p>
+<p><strong>随机返回一个键</strong><br><code>randomkey</code></p>
+<p><strong>删除键</strong><br><code>del keyname</code></p>
+<p><strong>修改键名</strong><br><code>rename k n_k</code><br><code>renamenx k n_k(n_k不存在时)</code></p>
+<p><strong>移动键到数据库n</strong><br><code>move keyname n</code></p>
+<p><strong>查询键的生命周期(-1永久)</strong><br><code>ttl kn</code></p>
 <p><strong>设置过期时间</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">秒语法：expire kn 10</span><br><span class="line">毫秒语法：pexpire kn 10000</span><br><span class="line">永久语法：persist kn</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">秒语法：expire kn <span class="number">10</span></span><br><span class="line">毫秒语法：pexpire kn <span class="number">10000</span></span><br><span class="line">永久语法：persist kn</span><br></pre></td></tr></table></figure>
 
-<p><strong>获取值类型</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> keyname</span><br></pre></td></tr></table></figure>
-
+<p><strong>获取值类型</strong><br><code>type keyname</code></p>
 <hr>
 <h3>string</h3>
 
 <p><strong>设置[多]键值</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[m]<span class="built_in">set</span> k v [EX seconds] [PX millisexonds] [NX|XX]</span><br><span class="line">setnx k v</span><br></pre></td></tr></table></figure>
-
-<p><strong>获取[多]值</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[m]get k</span><br></pre></td></tr></table></figure>
-
-<p><strong>获取值部分字符</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getrange k start end</span><br></pre></td></tr></table></figure>
-
-<p><strong>值追加</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">append k string</span><br></pre></td></tr></table></figure>
-
-<p>**值长度v</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strlen k</span><br></pre></td></tr></table></figure>
-
-<p><strong>值递增n[浮点型]</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incrby[<span class="built_in">float</span>] k n</span><br></pre></td></tr></table></figure>
-
-<p><strong>值递减n</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decrby k n</span><br></pre></td></tr></table></figure>
-
-<p><strong>删除键值</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del k</span><br></pre></td></tr></table></figure>
-
-<p><strong>序列化</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dump k</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3>hash</h3>
-
-<p><strong>设置键(h_k)值(kn vn)</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hmset h_k k1 v1 k2 v2 ...</span><br><span class="line">hsetnx h_k k v 不存在k时放入</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">[m]<span class="built_in">set</span> k v [EX seconds] [PX millisexonds] [NX|XX]</span><br><span class="line">setnx k v</span><br><span class="line">`</span><br><span class="line"></span><br><span class="line">**获取[多]值**</span><br><span class="line">`[m]get k`</span><br><span class="line"></span><br><span class="line">**获取值部分字符**</span><br><span class="line">`getrange k start end`</span><br><span class="line"></span><br><span class="line">**值追加**</span><br><span class="line">`append k <span class="built_in">string</span>`</span><br><span class="line"></span><br><span class="line">**值长度v</span><br><span class="line">`<span class="built_in">strlen</span> k`</span><br><span class="line"></span><br><span class="line">**值递增n[浮点型]**</span><br><span class="line">`incrby[<span class="keyword">float</span>] k n`</span><br><span class="line"></span><br><span class="line">**值递减n**</span><br><span class="line">`decrby k n`</span><br><span class="line"></span><br><span class="line">**删除键值**</span><br><span class="line">`del k`</span><br><span class="line"></span><br><span class="line">**序列化**</span><br><span class="line">`dump k`</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;h3&gt;hash&lt;/h3&gt;</span><br><span class="line"></span><br><span class="line">**设置键(h_k)值(kn vn)**</span><br><span class="line">```c</span><br><span class="line">hmset h_k k1 v1 k2 v2 ...</span><br><span class="line">hsetnx h_k k v 不存在k时放入</span><br></pre></td></tr></table></figure>
 
 <p><strong>获取字段值</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hgetall h_k</span><br><span class="line">hmget h_k k1 k2 ...</span><br><span class="line">hget h_k kx</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hgetall h_k</span><br><span class="line">hmget h_k k1 k2 ...</span><br><span class="line">hget h_k kx</span><br></pre></td></tr></table></figure>
 
-<p><strong>字段k是否存在</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexists h_k k</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看字段数目</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hlen h_k</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看所有字段</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hkeys h_k</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看所有值</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hvals h_k</span><br></pre></td></tr></table></figure>
-
-<p><strong>值运算</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hincrby h_k kx n(10/-1)</span><br></pre></td></tr></table></figure>
-
-<p><strong>删除键值</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hdel h_k kx</span><br><span class="line">del h_k</span><br></pre></td></tr></table></figure>
-
+<p><strong>字段k是否存在</strong><br><code>hexists h_k k</code></p>
+<p><strong>查看字段数目</strong><br><code>hlen h_k</code></p>
+<p><strong>查看所有字段</strong><br><code>hkeys h_k</code></p>
+<p><strong>查看所有值</strong><br><code>hvals h_k</code></p>
+<p><strong>值运算</strong><br><code>hincrby h_k kx n(10/-1)</code></p>
+<p><strong>删除键值</strong><br><code>hdel h_k kx</code></p>
 <hr>
 <h3>list</h3>
 
-<p><strong>创建键(l_k)值(vn(可重复))</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r/lpush l_k v1 v2 v2 ...</span><br></pre></td></tr></table></figure>
-
-<p><strong>位置n插入v（默认0）</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l/rset l_k index(n) v</span><br></pre></td></tr></table></figure>
-
+<p><strong>创建键(l_k)值(vn(可重复))</strong><br><code>r/lpush l_k v1 v2 v2 ...</code></p>
+<p><strong>位置n插入v（默认0）</strong><br><code>l/rset l_k index(n) v</code></p>
 <p><strong>查看元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">遍历：lrange l_k start(0) stop(-1)</span><br><span class="line">索引：lindex l_k index(n)</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">遍历：<span class="function">lrange l_k <span class="title">start</span><span class="params">(<span class="number">0</span>)</span> <span class="title">stop</span><span class="params">(<span class="number">-1</span>)</span></span></span><br><span class="line">索引：lindex l_k index(n)</span><br></pre></td></tr></table></figure>
 
-<p><strong>元素数目</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llen l_k</span><br></pre></td></tr></table></figure>
-
-<p><strong>弹出元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l/rpop l_k</span><br></pre></td></tr></table></figure>
-
-<p><strong>删除n(+n向右，-n向左，0全部)个v元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem l_k n v</span><br></pre></td></tr></table></figure>
-
-<p><strong>保留范围内(m至n)的元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrim l_k start(m) stop(n)</span><br></pre></td></tr></table></figure>
-
+<p><strong>元素数目</strong><br><code>llen l_k</code></p>
+<p><strong>弹出元素</strong><br><code>l/rpop l_k</code></p>
+<p><strong>删除n(+n向右，-n向左，0全部)个v元素</strong><br><code>lrem l_k n v</code></p>
+<p><strong>保留范围内(m至n)的元素</strong><br><code>ltrim l_k start(m) stop(n)</code></p>
 <hr>
 <h3>set</h3>
 
-<p><strong>创建键(s_k)值(vn)</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看所有元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smembers s_k</span><br></pre></td></tr></table></figure>
-
-<p><strong>随机返回n个元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srandmember s_k n</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看是否存在元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sismember s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看元素个数</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scard s_k</span><br></pre></td></tr></table></figure>
-
+<p><strong>创建键(s_k)值(vn)</strong><br><code>sadd s_k v1 v2 ...</code></p>
+<p><strong>查看所有元素</strong><br><code>smembers s_k</code></p>
+<p><strong>随机返回n个元素</strong><br><code>srandmember s_k n</code></p>
+<p><strong>查看是否存在元素</strong><br><code>sismember s_k v1 v2 ...</code></p>
+<p><strong>查看元素个数</strong><br><code>scard s_k</code></p>
 <p><strong>差集运算</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidff s_km s_kn</span><br><span class="line">sidffstore s_kd s_km s_kn(结果放入s_kd)</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidff s_km s_kn</span><br><span class="line"><span class="function">sidffstore s_kd s_km <span class="title">s_kn</span><span class="params">(结果放入s_kd)</span></span></span><br></pre></td></tr></table></figure>
 
 <p><strong>交集运算</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sinter s_km s_kn ...</span><br><span class="line">sinterstore s_kd s_km s_kn ...(结果放入s_kd)</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sinter s_km s_kn ...</span><br><span class="line">sinterstore s_kd s_km s_kn ...(结果放入s_kd)</span><br></pre></td></tr></table></figure>
 
 <p><strong>并集运算</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sunion s_km s_kn ...</span><br><span class="line">sunionstore s_kd s_km s_kn ...(结果放入s_kd)</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sunion s_km s_kn ...</span><br><span class="line">sunionstore s_kd s_km s_kn ...(结果放入s_kd)</span><br></pre></td></tr></table></figure>
 
-<p><strong>删除元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srem s_k v1 v2 ...</span><br></pre></td></tr></table></figure>
-
-<p><strong>弹出n个元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spop s_k n</span><br></pre></td></tr></table></figure>
-
-<p><strong>移动元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smove v s_k1 s_k2 </span><br></pre></td></tr></table></figure>
-
-<p><strong>删除s_k</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del s_k</span><br></pre></td></tr></table></figure>
-
+<p><strong>删除元素</strong><br><code>srem s_k v1 v2 ...</code></p>
+<p><strong>弹出n个元素</strong><br><code>spop s_k n</code></p>
+<p><strong>移动元素</strong><br><code>smove v s_k1 s_k2 </code></p>
+<p><strong>删除s_k</strong><br><code>del s_k</code></p>
 <hr>
 <h3>zset(按score_double排序)</h3>
 
-<p><strong>创建键(zs_k)值(score_double(可重复) vn)</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd zs_k 456 v1 478 v2 478 v3</span><br></pre></td></tr></table></figure>
-
-<p><strong>遍历元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrange zs_k strat(0) stop(-1) [withscores]</span><br></pre></td></tr></table></figure>
-
-<p><strong>返回min-max分段的第m位后n个元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrangebyscore zs_k min(0) max(-1) [withscore] <span class="built_in">limit</span> m n</span><br></pre></td></tr></table></figure>
-
-<p><strong>元素个数</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zcard zs_k</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看min-max的元素个数</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zcount zs_k min(-inf) max(+inf)</span><br></pre></td></tr></table></figure>
-
-<p><strong>查看kx的sd</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zscore zs_k kx</span><br></pre></td></tr></table></figure>
-
-<p><strong>改vx的sd+/-300</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zincrby zs_k +/-300 vx</span><br></pre></td></tr></table></figure>
-
-<p><strong>元素排名</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zrank zs_k v</span><br></pre></td></tr></table></figure>
-
+<p><strong>创建键(zs_k)值(score_double(可重复) vn)</strong><br><code>zadd zs_k 456 v1 478 v2 478 v3</code></p>
+<p><strong>遍历元素</strong><br><code>zrange zs_k strat(0) stop(-1) [withscores]</code></p>
+<p><strong>返回min-max分段的第m位后n个元素</strong><br><code>zrangebyscore zs_k min(0) max(-1) [withscore] limit m n</code></p>
+<p><strong>元素个数</strong><br><code>zcard zs_k</code></p>
+<p><strong>查看min-max的元素个数</strong><br><code>zcount zs_k min(-inf) max(+inf)</code></p>
+<p><strong>查看kx的sd</strong><br><code>zscore zs_k kx</code></p>
+<p><strong>改vx的sd+/-300</strong><br><code>zincrby zs_k +/-300 vx</code></p>
+<p><strong>元素排名</strong><br><code>zrank zs_k 0 -1 [withscores]</code></p>
 <p><strong>删除元素</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定：zrem zs_k km [kn ..]</span><br><span class="line">范围：zremrangebyscore zs_k min max</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">指定：zrem zs_k km [kn ..]</span><br><span class="line">范围：zremrangebyscore zs_k min max</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h3>python</h3>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis <span class="keyword">as</span> rd</span><br><span class="line"></span><br><span class="line">client = rd.Redis(host=<span class="string">&#x27;localhost&#x27;</span>, port = <span class="number">6379</span>, db = <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">print(client.keys())</span><br><span class="line">client.set(<span class="string">&#x27;book5&#x27;</span>,<span class="string">&#x27;redis&#x27;</span>)</span><br><span class="line">client.append(<span class="string">&#x27;book5&#x27;</span>, <span class="string">&#x27;-client&#x27;</span>)</span><br><span class="line">print(client.get(<span class="string">&#x27;book5&#x27;</span>).decode())</span><br><span class="line">client.lpush(<span class="string">&#x27;zb&#x27;</span>, <span class="number">18</span>, <span class="string">&#x27;cs&#x27;</span>, <span class="string">&#x27;play&#x27;</span>)</span><br><span class="line">print(client.lrange(<span class="string">&#x27;zb&#x27;</span>, <span class="number">0</span>, <span class="number">2</span>))</span><br><span class="line">client.sadd(<span class="string">&#x27;hello&#x27;</span>, <span class="string">&#x27;zb&#x27;</span>, <span class="string">&#x27;sx&#x27;</span>)</span><br><span class="line">print(client.smembers(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"></span><br><span class="line">all_info = client.keys</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> all_info():</span><br><span class="line">    print(key.decode())</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -566,7 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">通用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">zset(按score_double排序)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">python</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">通用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">zset(按score_double排序)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">python</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
