@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-16 22:10:11" itemprop="dateModified" datetime="2020-11-16T22:10:11+08:00">2020-11-16</time>
+                <time title="修改时间：2020-12-26 20:53:24" itemprop="dateModified" datetime="2020-12-26T20:53:24+08:00">2020-12-26</time>
               </span>
 
           <br>
@@ -286,7 +286,7 @@
 <p><strong>删除数据库</strong><br><code>drop database 库名</code></p>
 <p><strong>视图</strong><br>建立<br><code>create view &lt;视图名&gt; [(&lt;列名&gt;,[&lt;列名&gt;,...])] as &lt;子查询&gt; [WITH CHECK OPTION]</code><br>删除<br><code>drop view 视图名 [cascade];</code></p>
 <p><strong>查询</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select top num/per */[count/sum/avg/max/min([all/distinct] 列名)]|&lt;<span class="number">2020</span>-age&gt;|&lt;目标列表达式&gt; ...</span><br><span class="line">from &lt;表名或视图名&gt; [&lt;表名或视图名&gt; ...]|(&lt;select语句&gt;）[AS] &lt;别名&gt;</span><br><span class="line">[where &lt;条件表达式&gt;] / [group by &lt;列<span class="number">1</span>&gt; having &lt;条件表达式&gt;]</span><br><span class="line">[order by &lt;列<span class="number">2</span>&gt; [ASC|DESC]];</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select top(num) */[count/sum/avg/max/min([all/distinct] 列名)]|&lt;2020-age&gt;|&lt;目标列表达式&gt; ...</span><br><span class="line">from &lt;表名或视图名&gt; [&lt;表名或视图名&gt; ...]|(&lt;select语句&gt;）[AS] &lt;别名&gt;</span><br><span class="line">[where &lt;条件表达式&gt;]</span><br><span class="line">[group by &lt;列<span class="number">1</span>&gt; having &lt;条件表达式&gt;]</span><br><span class="line">[order by &lt;列<span class="number">2</span>&gt; [ASC|DESC]];</span><br></pre></td></tr></table></figure>
 
 <p><strong>条件</strong><br>比较: [!]=,&lt;,&gt;<br>范围: [not] between and<br>集合: in (1,2,3,’a’)<br>模糊: [not] like “f_%e” [escape’&#39;(转意)]<br>空值: is [not] NULL<br>逻辑: and, or, not</p>
 <p><strong>基于派生表查询</strong><br><code>select * from 表名或视图名,(&lt;select语句&gt;）[AS] &lt;别名&gt;</code></p>
