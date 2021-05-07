@@ -66,6 +66,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-install-os" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/05/install-os/" class="article-date">
+  <time datetime="2020-09-05T07:29:47.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/install-os/">安装系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>可用电脑一台，8G左右u盘一个</strong> [^干净的！！！]</p>
+<h3>一.操作系统下载</h3>
+官方网站选择不同版本的镜像
+
+<h3>二.下载启动盘制作工具</h3>
+如UitraISO,banlenaEtcher等
+
+<h3>三.制作启动盘</h3>
+1.打开UltraISO
+2.继续试用
+3.文件->打开->选择镜像文件->打开->启动->写入硬盘映象->写入
+**注意：硬盘驱动器选择u盘**
+
+<h3>四.安装操作系统</h3>
+1.插上u盘
+2.进入BIOS（不同电脑不一样，自己百度，华硕主板F2）
+3.选择启动项，把u盘拖到第一个
+4.保存退出（F7）
+5.接下来就是鼠标操作，识字就行
+
+<p><strong><em>小白到此结束（操作系统自动安装驱动程序）!!!</em></strong></p>
+<h3>五.手动安装驱动程序</h3>
+1主板的驱动程序
+华硕：https://www.asus.com.cn/support/Download-Center/
+
+<p>2独显的驱动程序<br>N卡：<a target="_blank" rel="noopener" href="https://www.nvidia.cn/Download/index.aspx?lang=cn">https://www.nvidia.cn/Download/index.aspx?lang=cn</a><br>A卡：<a target="_blank" rel="noopener" href="https://www.amd.com/zh-hans/support">https://www.amd.com/zh-hans/support</a></p>
+<p>3其他设备驱动程序<br>自己查找</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/09/05/install-os/" data-id="ckoea2rd20005798p1433c5jf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-halo-blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/31/halo-blog/" class="article-date">
@@ -151,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/halo-blog/" data-id="ckj5watwp0002208p3v1qciqg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/halo-blog/" data-id="ckoea2rce0002798p73fkg306" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/build-mongodb/" data-id="ckj5watvq0000208p2tnshy4z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/build-mongodb/" data-id="ckoea2rbk0000798p3cno11bq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -229,14 +292,14 @@
 <p>3.安装hexo<br>    cnpm install -g hexo-cli #hexo -v<br>    npm ERR! Error: EACCES: permission denied, access ‘/usr/local/lib/node_modules问题<br>       1.sudo chmod 775 /usr/local/lib/node_modules<br>       2.sudo chown -R $USER /usr/local/lib/node_modules #推荐，改变目录拥有者<br>    apt –purge remove hexo #卸载hexo</p>
 <p>4.初始化hexo<br>    hexo init myblog<br>    cd myblog //进入这个myblog文件夹<br>    cnpm install</p>
 <p>5.0<br>    注册coding，gitee，github等用户</p>
-<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x2e;&#x63;&#111;&#100;&#x69;&#x6e;&#103;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x2e;&#x63;&#111;&#100;&#x69;&#x6e;&#103;&#x2e;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
-<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#x31;&#50;&#51;&#52;&#x35;&#64;&#113;&#113;&#46;&#99;&#x6f;&#109;">&#x31;&#50;&#51;&#52;&#x35;&#64;&#113;&#113;&#46;&#99;&#x6f;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
+<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#x74;&#46;&#99;&#x6f;&#100;&#x69;&#x6e;&#x67;&#46;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#105;&#x74;&#46;&#99;&#x6f;&#100;&#x69;&#x6e;&#x67;&#46;&#99;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
+<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#49;&#50;&#x33;&#x34;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#49;&#50;&#x33;&#x34;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
 <p>6.发布文章<br>    hexo n “我的第一篇文章” #创建<br>    vim /home/../soure/_posts/我的第一篇文章.md #编辑<br>    cd /home/../myblog<br>    hexo clean  清理<br>    hexo g      生成<br>    hexo d      部署<br>    hexo s      启动</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/hexo-blog/" data-id="ckj5watww0003208p80siazl4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/hexo-blog/" data-id="ckoea2rcu0004798p6orpens3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/31/hello-world/" data-id="ckj5watx80005208p62gy6q0f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/31/hello-world/" data-id="ckoea2rcl0003798p86f65l6j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,7 +381,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
     </div>
   </div>
 
@@ -329,6 +392,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/05/07/mysql/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2020/11/08/mssql/">mssql</a>
@@ -346,10 +413,6 @@
             <a href="/2020/11/08/cpp/">cpp</a>
           </li>
         
-          <li>
-            <a href="/2020/11/08/python/">python</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -362,7 +425,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 啵A<br>
+      &copy; 2021 啵A<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
