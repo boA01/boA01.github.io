@@ -111,8 +111,8 @@
 <p>3.安装hexo<br>    cnpm install -g hexo-cli #hexo -v<br>    npm ERR! Error: EACCES: permission denied, access ‘/usr/local/lib/node_modules问题<br>       1.sudo chmod 775 /usr/local/lib/node_modules<br>       2.sudo chown -R $USER /usr/local/lib/node_modules #推荐，改变目录拥有者<br>    apt –purge remove hexo #卸载hexo</p>
 <p>4.初始化hexo<br>    hexo init myblog<br>    cd myblog //进入这个myblog文件夹<br>    cnpm install</p>
 <p>5.0<br>    注册coding，gitee，github等用户</p>
-<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#x74;&#46;&#99;&#x6f;&#100;&#x69;&#x6e;&#x67;&#46;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#105;&#x74;&#46;&#99;&#x6f;&#100;&#x69;&#x6e;&#x67;&#46;&#99;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
-<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#49;&#50;&#x33;&#x34;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#49;&#50;&#x33;&#x34;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
+<p>5-1.coding托管(国内的平台，网站是中文)<br>    创建项目<br>    选择devops<br>    创建代码仓库<br>    选git，启用启用README.cd文件初始化项目<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    sudo vi .ssh/config<br>        Host git.coding.com<br>        User your_email<br>        Hostname ssh.git.coding.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>    ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#x2e;&#99;&#111;&#x64;&#x69;&#x6e;&#x67;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#116;&#x2e;&#99;&#111;&#x64;&#x69;&#x6e;&#x67;&#46;&#99;&#111;&#x6d;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    静态网页，立即发布，(复制地址)</p>
+<p>5-2.GitHub托管(国外网站，是英文)<br>    创建一个仓库<br>        仓库名：用户名.github.io(别为为什么)<br>    选public，勾README<br>    su<br>    git config –global user.name “your_git_name”<br>    git config –global user.email “your_git_email”<br>    git config user.name #检查<br>    git config user.email #检查<br>    ssh-keygen -t rsa -C “your_git_email” #创建SSH<br>    cat ~/.ssh/id_rsa.pub 添加到 github的ssh key #放置公钥<br>    ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>  #查看是否成功<br>    失败ssh: connect to host github.com port 22: Connection refused<br>        方法一，添加以下内容<br>        sudo vi .ssh/config<br>        Host github.com<br>        User <a href="mailto:&#x31;&#50;&#51;&#x34;&#x35;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#x31;&#50;&#51;&#x34;&#x35;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a><br>        Hostname ssh.github.com<br>        PreferredAuthentications publickey<br>        IdentityFile ~/.ssh/id_rsa<br>        Port 443<br>        方法二，加一步ssh-add<br>        cd ~<br>        ssh-add<br>        ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#109;</a>  #查看是否成功<br>    vi _config.yml #配置文件<br>                /deploy:<br>                   type:git<br>                   repo:仓库地址(点击Use SSH)<br>                   branch:master<br>    cnpm install –save hexo-deployer-git #安装上传插件<br>    hexo g -d<br>    打开项目，点Settings，找到Github pages，选择maser branch<br>    得到你的网址</p>
 <p>6.发布文章<br>    hexo n “我的第一篇文章” #创建<br>    vim /home/../soure/_posts/我的第一篇文章.md #编辑<br>    cd /home/../myblog<br>    hexo clean  清理<br>    hexo g      生成<br>    hexo d      部署<br>    hexo s      启动</p>
 ]]></content>
   </entry>
@@ -307,7 +307,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
+    <title>mysql</title>
     <url>/2021/05/07/mysql/</url>
     <content><![CDATA[<p>创建数据库：<code>create database base_name;</code><br>查看数据库：<code>show database;</code><br>使用数据库：<code>use base_name;</code><br>查看数据表：<code>show tables;</code><br>创建数据表: <code>create table table_name(key type 约束);[例如：(name varchar(25),id int)]</code><br>插入数据：<code>insert into table_name(id,name,sex) values (001,&#39;lizhaobo&#39;,&#39;male&#39;);</code><br>查看指定数据表：<code>desc table_name;</code></p>
 <p>约束：NOT NULL(不为空); UNIQUE(唯一); PRIMARY KEY (学号, 科目)(主键); FOREIGN KEY (Id)(参照完整性); CHECK(条件); DEFAULT(设置默认)<br>查看数据表信息：</p>
@@ -337,75 +337,65 @@
     <title>python</title>
     <url>/2020/11/08/python/</url>
     <content><![CDATA[<h3>包管理工具</h3>
-<h4>pip</h4>
-`pip [un]install dkp[==版本] [-i https://pypi.tuna.tsinghua.edu.cn/simple/]`
-阿里云 http://mirrors.aliyun.com/pypi/simple/
-中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
-豆瓣(douban) http://pypi.douban.com/simple/
+pip
+    `pip [un]install dkp[==版本] [-i https://pypi.tuna.tsinghua.edu.cn/simple/]`
+    阿里云 http://mirrors.aliyun.com/pypi/simple/
+    中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+    瓣(douban) http://pypi.douban.com/simple/
 `pip confoig set global. index-url=url`
-导出库依赖
-`pip freeze > requirements.txt`
-安装库依赖
-`pip install requirements.txt`
-<h4>conda</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">conda info 查看信息</span><br><span class="line">set&#x2F;$Env CONDA_FORCE_32BIT&#x3D;1 切换32位(为空则换回64位)</span><br><span class="line">conda create -n python_32 python&#x3D;3.8 -y 创建环境</span><br><span class="line">conda env list 查看虚拟环境</span><br><span class="line">conda activate python_32 开启环境</span><br><span class="line">conda deactivate 关闭环境</span><br><span class="line">conda deactivate python_32</span><br><span class="line">conda remove -n python_32 --all</span><br></pre></td></tr></table></figure>
-
 <h3>打包</h3>
-`pyinstaller -Fw *.py`
 
+<p><code>pyinstaller -Fw *.py</code></p>
 <h3>shell</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sys.ps1</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">sys.ps2</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+    sys.ps1
+    >>>
+    sys.ps2
+    ...
 
 <h3>虚拟环境</h3>
+
 <h4>创建ll-env虚拟环境</h4>
 `virtualenv ll_env`
 `python3 -m venv ll_env`
 `pipenv install [--python 3.8] [产生Pipfile和pipflie.lock文件]按Pipfile文件生成环境(安装包)`
 `conda create -n <env_name> [<package_names>,....] [-y]`
+
 <h4>进入虚拟环境</h4>
 `W:ll_env\Scripts\activate`
 `L:[source] ll_env/bin/activate`
 
 <p><code>pipenv shell 没有环境就自动初始化</code></p>
-<p><code>[source] activate &lt;env_name&gt;</code>    </p>
+<p><code>[source] activate &lt;env_name&gt;</code></p>
 <h4>退出虚拟环境</h4>
 `[source] deactivate`
 
 <p>导出库依赖<br><code>pip freeze &gt; requirements.txt</code><br>安装库依赖<br><code>pip install requirements.txt</code></p>
+<h3>conda</h3>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda info 查看信息</span><br><span class="line"><span class="built_in">set</span>/<span class="variable">$Env</span> CONDA_FORCE_32BIT=1 切换32位(为空则换回64位)</span><br><span class="line">conda create -n python_32 python=3.8 -y 创建环境</span><br><span class="line">conda env list 查看虚拟环境</span><br><span class="line">conda activate python_32 开启环境</span><br><span class="line">conda deactivate 关闭环境</span><br><span class="line">conda deactivate python_32</span><br><span class="line">conda remove -n python_32 --all</span><br></pre></td></tr></table></figure>
+
 <h3>jupyter</h3>
-`
-jupyter notebook --generate-config 
-c.Notebookapp.notebook_dir = 'e:\\jn'
-`
-`jupyter notebook e:/jn`
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">jupyter notebook --generate-config </span><br><span class="line">c.Notebookapp.notebook_dir = <span class="string">&#x27;e:\\jn&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3>Django</h3>
-pip安装django
-`pip install django`
-基于python创建django项目
-`django-admin.exe startproject learning_log`
-开启一个工程
-`python manage.py startapp App`
-运行项目
-`python manage.py runserver`
-
+<p><code>jupyter notebook e:/jn</code></p>
+<p>pip安装django<br><code>pip install django</code><br>基于python创建django项目<br><code>django-admin.exe startproject learning_log</code><br>开启一个工程<br><code>python manage.py startapp App</code><br>运行项目<br><code>python manage.py runserver</code></p>
 <h3>测试</h3>
 
 <p>1.下载adb<br><a href="https://developer.android.google.cn/studio/releases/platform-tools">https://developer.android.google.cn/studio/releases/platform-tools</a><br>2.检测<br><code>adb devicesad</code><br>3.<code>pip install uiautomator2 weditor</code><br>4.初始化手机<br><code>python -m uiautomator2 init</code><br>5.打开控制台<br><code>python -m weditor</code></p>
 <h4>datetime as dt</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dt.date(year,month,day)</span><br><span class="line">dt.time(hour,minute,second,microsecond,tzinfo)</span><br><span class="line">dt.datetime(.......)</span><br><span class="line">dt.timedelta(days&#x3D;1) #设置一天时段</span><br><span class="line">dt.datetime.strptime(&#39;2019-05-31 01:00:00&#39;, &#39;%Y-%m-%d %H:%M:%S&#39;) </span><br><span class="line">dt.datetime.now()[.strftime(&quot;%Y&#x2F;y-%m-%d %H:%M:%S %w&#x2F;W&#x2F;a&#x2F;A %b&#x2F;B %j %Z&quot;)]</span><br><span class="line">dt.date.today().timetuple()</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dt.date(year,month,day)</span><br><span class="line">dt.time(hour,minute,second,microsecond,tzinfo)</span><br><span class="line">dt.datetime(.......)</span><br><span class="line">dt.timedelta(days=1) <span class="comment">#设置一天时段</span></span><br><span class="line">dt.datetime.strptime(<span class="string">&#x27;2019-05-31 01:00:00&#x27;</span>, <span class="string">&#x27;%Y-%m-%d %H:%M:%S&#x27;</span>) </span><br><span class="line">dt.datetime.now()[.strftime(<span class="string">&quot;%Y/y-%m-%d %H:%M:%S %w/W/a/A %b/B %j %Z&quot;</span>)]</span><br><span class="line">dt.date.today().timetuple()</span><br></pre></td></tr></table></figure>
 
 <h4>time</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">time.tiem() 当前时间戳</span><br><span class="line">time.ctime()</span><br><span class="line">time.clock()</span><br><span class="line">time.strftime(&quot;Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line">time.localtime()</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time.tiem() 当前时间戳</span><br><span class="line">time.ctime()</span><br><span class="line">time.clock()</span><br><span class="line">time.strftime(<span class="string">&quot;Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line">time.localtime()</span><br></pre></td></tr></table></figure>
 
 <h4>calendar as cal</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cal.isleap(year) #判断闰年</span><br><span class="line">cal.leapdays(y1,y2) #哪些是闰年</span><br><span class="line">cal.month(year,month) #打印月</span><br><span class="line">cal.calendar(year) #打印年</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cal.isleap(year) <span class="comment">#判断闰年</span></span><br><span class="line">cal.leapdays(y1,y2) <span class="comment">#哪些是闰年</span></span><br><span class="line">cal.month(year,month) <span class="comment">#打印月</span></span><br><span class="line">cal.calendar(year) <span class="comment">#打印年</span></span><br></pre></td></tr></table></figure>
 
 <h4>math as m</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">m.perm(n,k) #排列</span><br><span class="line">m.comb(n,k) #组合</span><br><span class="line">m.factorial(x) #阶乘</span><br><span class="line">m.fsum(iterable) #求和，避免进度损失，不同于sum()</span><br><span class="line">m.prod(iterable,*,start&#x3D;1) #求积</span><br><span class="line">m.gcd(a,b) #返回最大公约数</span><br><span class="line"></span><br><span class="line">m.exp(x) #e的x幂</span><br><span class="line">m.pow(x,n)</span><br><span class="line">m.isqrt(x) #开方,取整</span><br><span class="line">m.sqrt(x)</span><br><span class="line">m.log(m,n)</span><br><span class="line">m.log2(x)</span><br><span class="line">m.log10(x)</span><br><span class="line">m.hypot(*coordinates)&#x3D;sqrt(sum(x**2 for x in coordinates))</span><br><span class="line"></span><br><span class="line">m.radians(x) #角度转弧度</span><br><span class="line">m.defrees(x) #弧度转角度</span><br><span class="line"></span><br><span class="line">2*m.pi &#x3D; m.tau</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">m.perm(n,k) <span class="comment">#排列</span></span><br><span class="line">m.comb(n,k) <span class="comment">#组合</span></span><br><span class="line">m.factorial(x) <span class="comment">#阶乘</span></span><br><span class="line">m.fsum(iterable) <span class="comment">#求和，避免进度损失，不同于sum()</span></span><br><span class="line">m.prod(iterable,*,start=1) <span class="comment">#求积</span></span><br><span class="line">m.gcd(a,b) <span class="comment">#返回最大公约数</span></span><br><span class="line"></span><br><span class="line">m.exp(x) <span class="comment">#e的x幂</span></span><br><span class="line">m.pow(x,n)</span><br><span class="line">m.isqrt(x) <span class="comment">#开方,取整</span></span><br><span class="line">m.sqrt(x)</span><br><span class="line">m.log(m,n)</span><br><span class="line">m.log2(x)</span><br><span class="line">m.log10(x)</span><br><span class="line">m.hypot(*coordinates)=sqrt(sum(x**2 <span class="keyword">for</span> x <span class="keyword">in</span> coordinates))</span><br><span class="line"></span><br><span class="line">m.radians(x) <span class="comment">#角度转弧度</span></span><br><span class="line">m.defrees(x) <span class="comment">#弧度转角度</span></span><br><span class="line"></span><br><span class="line">2*m.pi = m.tau</span><br></pre></td></tr></table></figure>
 
 <h4>random as r</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">r.random()</span><br><span class="line">r.randrang(start,stop,step)</span><br><span class="line">r.randint(m,n)</span><br><span class="line">r.uniform(f1,f2)</span><br><span class="line">r.choice(seq) #随机一个元素</span><br><span class="line">r.sample(population,k) #随机不重复k个数</span><br><span class="line">r.shuffle(x) #乱序</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">r.random()</span><br><span class="line">r.randrang(start,stop,step)</span><br><span class="line">r.randint(m,n)</span><br><span class="line">r.uniform(f1,f2)</span><br><span class="line">r.choice(seq) <span class="comment">#随机一个元素</span></span><br><span class="line">r.sample(population,k) <span class="comment">#随机不重复k个数</span></span><br><span class="line">r.shuffle(x) <span class="comment">#乱序</span></span><br></pre></td></tr></table></figure>
 
 <p>encode() 编码<br>decode() 解码</p>
 ]]></content>
